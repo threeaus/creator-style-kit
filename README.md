@@ -25,6 +25,7 @@ python3 scripts/sound_pass.py <project> renders/x.mp4            # 混音 + 质�
 
 ## 授权说明
 
+- 本仓库自己的代码、风格配置与文档：MIT，见 `LICENSE`。下面的第三方文件各自沿用原授权。
 - `vendor/sound-layer`：MIT，见其 LICENSE。
 - `sfx/`：Kenney 与 uisfx 音效均为 CC0，见 `sfx/LICENSE-*.txt`。
 - `fonts/src`：仓库内的字体均为 OFL-1.1。**MiSans、优设标题黑**是免费商用字体，但不允许再分发，所以不放进仓库，由 `scripts/fetch_fonts.py` 下载并校验 sha256。使用前请阅读各自的授权：[MiSans](https://hyperos.mi.com/font/)、[优设](https://www.uisdc.com/)。
