@@ -20,7 +20,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-Third-party files keep their own licenses and are not covered by the above:
-fonts/src (SIL OFL-1.1), sfx (CC0 1.0, see sfx/LICENSE-*.txt),
-vendor/sound-layer (MIT, see vendor/sound-layer/LICENSE).
