@@ -1,0 +1,60 @@
+id: isometric-stack
+order: 14
+name: { zh: 等轴架构, en: Isometric Stack }
+essence: 浅灰蓝底、30° 等轴网格、一层层落下堆叠的平台板、三面明暗。把「分层」讲清楚——技术栈、Agent 架构、上下文组成。
+not:
+  - 只用一个靛蓝强调，其余是白/灰三阶明暗
+  - 不用真实透视和镜头旋转，坚持等轴（无灭点）
+  - 不用投影虚化，体积感只靠三面明暗
+  - 一张图最多 4 层
+references: [lemo-opuscar/iso-infographic, Isoflow, Stripe 等轴插画]
+best_for: [技术栈/分层架构, Agent 与工具的关系, 上下文窗口构成, 工作流]
+
+fonts:
+  display: { family: "CSK MiSans", file: MiSans-Heavy.otf, weight: 900, license: "MiSans 许可（免费商用，不得修改/转售）", source: "https://hyperos.mi.com/font-download/MiSans.zip" }
+  body:    { family: "CSK MiSans", file: MiSans-Medium.otf, weight: 500, license: "MiSans 许可" }
+  latin:   { family: "CSK Space Grotesk", file: SpaceGrotesk-Bold.ttf, weight: 700, license: "OFL-1.1" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#EEF0F4"
+  surface: "#FFFFFF"
+  line: "rgba(30,34,60,0.07)"
+  text: "#1D2033"
+  muted: "#6B7088"
+  accent: "#4F46E5"
+  accentInk: "#FFFFFF"
+  side: "#D5D8E4"
+  dark: "#AEB3C6"
+
+type: { hero: 300, h1: 128, h2: 88, body: 40, label: 26, displayTracking: -0.01, labelTracking: 0.16 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power2.in", snap: "cubic(0.7,0,0.2,1)", overshoot: "none" }
+  dur: { in: 0.6, out: 0.3, charStagger: 0, lineStagger: 0.1 }
+  textIn: clip-rise
+  textOut: sink
+  emphasis: knife-underline
+  number: soft-count
+  list: iso-stack            # 平台板从上方落下，逐层堆叠
+  transition: iso-slide      # 面板沿 30° 等轴方向滑过
+  camera: locked
+
+layout: { chapter: top, list: head-top, stat: top-left }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, grain: 0.015 }
+
+lookbook:
+  idx: "L{n}"
+  textures: '<div class="tex tex-iso"></div><div class="tex tex-grain"></div>'
+
+sound:
+  character: 积木落位的轻「嗒」，木与塑料，中频、利落
+  kit:
+    title:      [{ src: "uisfx:organic/open", gain: -8 }]
+    list:       [{ src: "kenney-imp:impactPlank_medium_000", gain: -13 }, { src: "kenney-imp:impactPlank_medium_001", gain: -13 }, { src: "kenney-imp:impactPlank_medium_002", gain: -13 }]
+    transition: [{ src: "uisfx:organic/swipe", gain: -9 }]
+    hit:        [{ src: "uisfx:organic/snap", gain: -8 }]
+    reveal:     [{ src: "uisfx:organic/complete", gain: -7 }]
+    outro:      [{ src: "uisfx:organic/success", gain: -8 }]
+  rules: { maxPerSecond: 0.7, heroMax: 2, silentShare: 0.6 }

@@ -1,0 +1,60 @@
+id: benchmark-hud
+order: 11
+name: { zh: 评测仪表, en: Benchmark HUD }
+essence: 近黑青色舞台、发丝线框、扫描线落字、角标锁定、270° 仪表盘。琥珀色只在数值「锁定」那一刻出现——克制的遥测感，不是廉价赛博。
+not:
+  - 不用满屏霓虹、不用 RGB 分离、不用镜头抖动
+  - 琥珀强调色只给「锁定的那个数值」
+  - 装饰性 HUD 元素不超过 3 个（角框、刻度环、元数据行）
+  - 不要整支视频都用，HUD 在评测类视频里很常见，留给分数/对比段落
+references: [lemo-opuscar/hologram-hud, F1 telemetry, Territory Studio FUI]
+best_for: [跑分揭晓, 新旧版本对比, 速度/延迟/成本读数, 排行榜]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Regular.otf, weight: 400, license: "OFL-1.1" }
+  latin:   { family: "CSK Space Grotesk", file: SpaceGrotesk-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts (static instance wght=500)" }
+  mono:    { family: "CSK Space Mono", file: SpaceMono-Bold.ttf, weight: 700, license: "OFL-1.1", source: "Google Fonts" }
+
+colors:
+  bg: "#020809"
+  surface: "#04141A"
+  line: "rgba(112,235,255,0.20)"
+  text: "#DFF7FB"
+  muted: "#4FA9B8"
+  accent: "#FFBF47"
+  accentInk: "#020809"
+  cyan: "#70EBFF"
+
+type: { hero: 250, h1: 116, h2: 80, body: 36, label: 26, displayTracking: 0.01, labelTracking: 0.22 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power3.in", snap: "cubic(0.65,0,0.35,1)", overshoot: "none" }
+  dur: { in: 0.5, out: 0.22, charStagger: 0.025, lineStagger: 0.1 }
+  textIn: scan-in            # 青色扫描条扫过，文字留在身后，结尾闪一下
+  textOut: cut
+  emphasis: bracket-lock     # 四个角标收拢锁定关键词
+  number: gauge              # 270° 环形仪表填充到数值
+  list: readout              # 读数行：编号点亮 → 扫描文字 → 右侧数值计数
+  transition: edge-wipe      # 一条亮线从上往下扫过换场
+  camera: locked
+
+layout: { chapter: center, list: head-top, stat: center }   # archetypes in runtime/kit.css
+
+texture: { scanlines: 0.03, vignette: 0.5 }
+
+lookbook:
+  idx: "0{n}"
+  textures: '<div class="tex tex-lift"></div><div class="tex tex-scan"></div><div class="tex tex-vignette"></div><div class="hud-frame"><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i></div><div class="hud-meta"><span>SYS · EVAL</span><span>RUN 0412</span><span>● LIVE</span></div>'
+
+sound:
+  character: 短促的数字确认音和柔和的扫描声；锁定时一声清脆的「叮」
+  kit:
+    title:      [{ src: "uisfx:scifi/open", gain: -9 }]
+    list:       [{ src: "uisfx:scifi/progress-step", gain: -10, pitch: [0, 2, 4] }]
+    transition: [{ src: "uisfx:scifi/swipe", gain: -11 }]
+    tick:       [{ src: "uisfx:scifi/scanning", gain: -16 }]
+    hit:        [{ src: "uisfx:scifi/lock", gain: -8 }]
+    reveal:     [{ src: "uisfx:scifi/complete", gain: -7 }]
+    outro:      [{ src: "uisfx:scifi/sleep", gain: -9 }]
+  rules: { maxPerSecond: 0.75, heroMax: 2, silentShare: 0.6 }

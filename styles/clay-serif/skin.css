@@ -1,0 +1,8 @@
+/* clay-serif — ivory book page, one clay accent */
+.csk[data-csk="clay-serif"] .csk-chapter .num { color: var(--c-accent); font-size: 190px; }
+.csk[data-csk="clay-serif"] .csk-chapter .rule { height: 1.5px; opacity: 0.25; }
+.csk[data-csk="clay-serif"] .t-label { letter-spacing: 0.12em; }
+.csk[data-csk="clay-serif"] .csk-list li .idx { color: var(--c-accent); min-width: 56px; }
+.csk[data-csk="clay-serif"] .csk-list li .txt { font-size: 60px; }
+.csk[data-csk="clay-serif"] .csk-stat .unit { font-family: var(--f-body); font-weight: 400; font-size: 68px; color: var(--c-muted); }
+.csk[data-csk="clay-serif"] .csk-scribble { bottom: -0.26em; height: 0.3em; }

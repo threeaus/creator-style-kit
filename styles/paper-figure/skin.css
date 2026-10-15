@@ -1,0 +1,12 @@
+/* paper-figure — arXiv page: line-number gutter, figure caption, \boxed{} */
+.csk[data-csk="paper-figure"] .pf-gutter { position: absolute; left: 18px; top: 150px; width: 40px; text-align: right; font-family: var(--f-mono); font-size: 17px; line-height: 44px; color: var(--c-muted); opacity: 0.55; }
+.csk[data-csk="paper-figure"] .pf-cap { position: absolute; left: 80px; right: 80px; bottom: 520px; font-family: var(--f-body); font-size: 28px; line-height: 1.5; color: var(--c-muted); }
+.csk[data-csk="paper-figure"] .pf-cap b { color: var(--c-text); font-weight: 600; }
+.csk[data-csk="paper-figure"] .csk-chapter .num { color: var(--c-text); font-size: 150px; }
+.csk[data-csk="paper-figure"] .csk-chapter .rule { height: 1px; }
+.csk[data-csk="paper-figure"] .t-label { text-transform: none; font-family: var(--f-note); font-style: italic; font-size: 30px; letter-spacing: 0; }
+.csk[data-csk="paper-figure"] .csk-list li { padding: 20px 0; }
+.csk[data-csk="paper-figure"] .csk-list li .idx { color: var(--c-accent); font-size: 32px; }
+.csk[data-csk="paper-figure"] .csk-list li .txt { font-family: var(--f-body); font-weight: var(--w-body); font-size: 56px; }
+.csk[data-csk="paper-figure"] .csk-list li .rule { display: none; }
+.csk[data-csk="paper-figure"] .csk-stat .unit { font-family: var(--f-body); font-weight: var(--w-body); font-size: 64px; }

@@ -1,0 +1,22 @@
+/* benchmark-hud — restrained telemetry: cyan hairlines, amber only on locked values */
+.csk[data-csk="benchmark-hud"] .hud-frame .c { position: absolute; width: 64px; height: 64px; border: 0 solid var(--c-cyan); opacity: 0.55; }
+.csk[data-csk="benchmark-hud"] .hud-frame .tl { left: 44px; top: 70px; border-left-width: 2px; border-top-width: 2px; }
+.csk[data-csk="benchmark-hud"] .hud-frame .tr { right: 44px; top: 70px; border-right-width: 2px; border-top-width: 2px; }
+.csk[data-csk="benchmark-hud"] .hud-frame .bl { left: 44px; bottom: 150px; border-left-width: 2px; border-bottom-width: 2px; }
+.csk[data-csk="benchmark-hud"] .hud-frame .br { right: 44px; bottom: 150px; border-right-width: 2px; border-bottom-width: 2px; }
+.csk[data-csk="benchmark-hud"] .hud-meta { position: absolute; left: 80px; right: 80px; top: 112px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 20px; letter-spacing: 0.2em; color: var(--c-muted); }
+.csk[data-csk="benchmark-hud"] .csk-scanbar { background: var(--c-cyan); box-shadow: 0 0 18px var(--c-cyan); }
+.csk[data-csk="benchmark-hud"] .csk-chapter .num { color: var(--c-cyan); font-family: var(--f-mono); font-size: 150px; }
+.csk[data-csk="benchmark-hud"] .csk-chapter .rule { height: 1.5px; background: var(--c-cyan); opacity: 0.6; }
+.csk[data-csk="benchmark-hud"] .csk-list li { padding: 30px 0; }
+.csk[data-csk="benchmark-hud"] .csk-list li .idx { color: var(--c-cyan); font-size: 26px; }
+.csk[data-csk="benchmark-hud"] .csk-list li .txt { font-size: 54px; font-family: var(--f-body); font-weight: 700; }
+.csk[data-csk="benchmark-hud"] .csk-list li .rule { height: 1px; background: var(--c-line); }
+.csk[data-csk="benchmark-hud"] .csk-lval { font-family: var(--f-mono); font-size: 44px; bottom: 34px; color: var(--c-cyan); }
+.csk[data-csk="benchmark-hud"] .csk-stat { top: 560px; text-align: center; }
+.csk[data-csk="benchmark-hud"] .csk-stat .val { position: relative; }
+.csk[data-csk="benchmark-hud"] .csk-gauge { top: 112px; }
+.csk[data-csk="benchmark-hud"] .csk-stat .unit { font-size: 60px; color: var(--c-muted); margin-top: 26px; position: relative; }
+.csk[data-csk="benchmark-hud"] .csk-stat .note { font-size: 36px; margin-top: 30px; position: relative; }
+.csk[data-csk="benchmark-hud"] .csk-tr .sheet.edge-y { background: var(--c-bg); }
+.csk[data-csk="benchmark-hud"] .csk-tr .sheet.edge-y::before, .csk[data-csk="benchmark-hud"] .csk-tr .sheet.edge-y::after { height: 3px; background: var(--c-cyan); box-shadow: 0 0 24px var(--c-cyan); }

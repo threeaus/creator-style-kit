@@ -1,0 +1,58 @@
+id: particle-field
+order: 12
+name: { zh: 粒子星云, en: Particle Field }
+essence: 深空黑、缓慢漂浮的尘埃粒子、文字从散落的光点中聚拢、数字由点阵粒子拼出。抽象、安静、有「智能涌现」的意味。
+not:
+  - 不用粒子爆炸和满屏闪烁（那是廉价感的来源）
+  - 粒子数量克制：背景 ≤ 140 颗，大多数半透明
+  - 只有一个紫色强调，光晕只给关键词
+  - 不要在粒子背景上放长段正文
+references: [tsParticles, Refik Anadol 数据雕塑, Apple Intelligence 发布片光点]
+best_for: [片头/章节, 模型能力概念（涌现、规模）, 抽象原理, 结尾金句]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Medium.otf, weight: 500, license: "OFL-1.1" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Regular.otf, weight: 400, license: "OFL-1.1" }
+  latin:   { family: "CSK Space Grotesk", file: SpaceGrotesk-Bold.ttf, weight: 700, license: "OFL-1.1", source: "Google Fonts (static instance wght=700)" }
+  mono:    { family: "JetBrains Mono", bundled: true, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#05060A"
+  surface: "#0D0F16"
+  line: "rgba(255,255,255,0.08)"
+  text: "#F2F3F8"
+  muted: "#7D8296"
+  accent: "#9B8CFF"
+  accentInk: "#05060A"
+
+type: { hero: 300, h1: 124, h2: 86, body: 38, label: 26, displayTracking: 0.02, labelTracking: 0.3 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.85, out: 0.4, charStagger: 0.03, lineStagger: 0.12 }
+  textIn: converge           # 每个字从散落的尘埃中聚拢
+  textOut: disperse
+  emphasis: halo             # 关键词从内部亮起紫色光晕
+  number: particle-form      # 粒子飞来拼成 5×7 点阵数字
+  list: converge-rows
+  transition: particle-warp  # 穿过粒子场的跃迁
+  camera: slow-push
+
+layout: { chapter: center, list: center, stat: center }   # archetypes in runtime/kit.css
+
+texture: { vignette: 0.55 }
+
+lookbook:
+  idx: "·"
+  textures: '<div class="tex tex-particles" data-n="140"></div><div class="tex tex-vignette"></div>'
+
+sound:
+  character: 空灵、带混响的高频闪光音；像星尘，几乎没有打击感
+  kit:
+    title:      [{ src: "uisfx:dreamy/wake", gain: -8 }]
+    list:       [{ src: "uisfx:dreamy/select", gain: -11, pitch: [0, 4, 7] }]
+    transition: [{ src: "uisfx:dreamy/swipe", gain: -9 }]
+    hit:        [{ src: "uisfx:dreamy/snap", gain: -10 }]
+    reveal:     [{ src: "uisfx:dreamy/level-up", gain: -8 }]
+    outro:      [{ src: "uisfx:dreamy/sleep", gain: -9 }]
+  rules: { maxPerSecond: 0.55, heroMax: 2, silentShare: 0.7 }

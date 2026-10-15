@@ -1,0 +1,59 @@
+id: warm-notebook
+name: { zh: 暖调手账, en: Warm Notebook }
+essence: 奶油底、手写感、圆角贴纸、俏皮但不幼稚。像在笔记本上给朋友讲一件事——小Lin说式的亲切。
+not:
+  - 不用纯黑底和冷色调
+  - 弹性只用在"弹出"，退场要干脆
+  - 一个画面最多两种强调色
+  - 不用综艺式密集音效
+references: [小Lin说, 手账/笔记美学, Kurzgesagt 的圆润感]
+best_for: [新手教程, 概念讲解, 亲切的口播片尾, 经验分享]
+
+fonts:
+  display: { family: "CSK Smiley Sans", file: SmileySans-Oblique.ttf, weight: 400, license: "OFL-1.1", source: "https://github.com/atelier-anchor/smiley-sans" }
+  body:    { family: "CSK WenKai", file: LXGWWenKai-Medium.ttf, weight: 500, license: "OFL-1.1", source: "https://github.com/lxgw/LxgwWenKai" }
+  latin:   { family: "CSK Smiley Sans", file: SmileySans-Oblique.ttf, weight: 400, license: "OFL-1.1" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#FFF8EC"
+  surface: "#FFFFFF"
+  line: "rgba(43,42,40,0.10)"
+  text: "#2B2A28"
+  muted: "#8A8178"
+  accent: "#FF5A36"
+  accentInk: "#FFFFFF"
+  sky: "#3B82F6"
+  butter: "#FFD166"
+  mint: "#22C55E"
+
+type: { hero: 340, h1: 150, h2: 100, body: 44, label: 26, displayTracking: 0.01, labelTracking: 0.06 }
+
+motion:
+  ease: { enter: "back.out(1.4)", exit: "power2.in", snap: "power3.inOut", overshoot: "back.out(1.4)" }
+  dur: { in: 0.55, out: 0.25, charStagger: 0.045, lineStagger: 0.1 }
+  textIn: spring-pop         # 0.6 → 1.06 → 1 弹出，每个字随机 ±3° 歪斜
+  emphasis: scribble         # 手绘涂鸦下划线画出来
+  number: bubble-count       # 数字在圆泡里数上去
+  list: sticker-cards        # 圆角贴纸卡片，带 2px 描边，依次弹出
+  transition: card-zoom      # 推进一张卡片，卡片变成下一页
+  camera: gentle-float       # 元素轻微漂浮
+
+layout: { chapter: center, list: head-top, stat: center }   # archetypes in runtime/kit.css
+
+texture: { dots: 36, dotsOpacity: 0.12, grain: 0.02 }
+
+order: 4
+lookbook:
+  textures: '<div class="tex tex-dots"></div><div class="tex tex-grain"></div>'
+
+sound:
+  character: 圆润、有弹性、中频、带音高；像拨弦和小气泡
+  kit:
+    title:      [{ src: "uisfx:rubber/open", gain: -6 }]
+    list:       [{ src: "kenney-if:drop_001", gain: -12 }, { src: "kenney-if:drop_002", gain: -12 }, { src: "kenney-if:drop_003", gain: -12 }]
+    transition: [{ src: "uisfx:rubber/swipe", gain: -8 }]
+    hit:        [{ src: "uisfx:rubber/snap", gain: -6 }]
+    reveal:     [{ src: "uisfx:soft/complete", gain: -6 }]
+    outro:      [{ src: "uisfx:rubber/achievement", gain: -8 }]
+  rules: { maxPerSecond: 0.7, heroMax: 2, silentShare: 0.6 }

@@ -1,0 +1,13 @@
+/* isometric-stack — list becomes a stack of slabs on a true-isometric plane; labels are billboarded back to screen */
+.csk[data-csk="isometric-stack"] .csk-chapter .num { font-size: 190px; }
+.csk[data-csk="isometric-stack"] .csk-list { top: 1000px; left: 90px; right: auto; width: 420px; height: 420px; transform: rotateX(54.7356deg) rotateZ(-45deg); transform-style: preserve-3d; }
+.csk[data-csk="isometric-stack"] .csk-list li { position: absolute; left: 0; top: 0; width: 420px; height: 420px; padding: 0; display: block; transform-style: preserve-3d;
+  background: var(--c-surface); border: 2px solid rgba(29,32,51,0.08);
+  box-shadow: -4px 4px 0 var(--c-side), -8px 8px 0 var(--c-side), -12px 12px 0 var(--c-side), -16px 16px 0 var(--c-dark), -20px 20px 0 var(--c-dark); }
+.csk[data-csk="isometric-stack"] .csk-list li:last-child { background: var(--c-accent); }
+.csk[data-csk="isometric-stack"] .csk-list li .idx { position: absolute; left: 34px; top: 26px; font-size: 52px; color: var(--c-muted); }
+.csk[data-csk="isometric-stack"] .csk-list li:last-child .idx { color: rgba(255,255,255,0.8); }
+.csk[data-csk="isometric-stack"] .csk-list li .txt { position: absolute; left: 420px; top: 420px; white-space: nowrap; font-size: 44px; transform-origin: 0 0; transform: rotateZ(45deg) rotateX(-54.7356deg) translate(36px, -34px); padding-left: 18px; border-left: 3px solid var(--c-accent); line-height: 1; }
+.csk[data-csk="isometric-stack"] .csk-list li .rule { display: none; }
+.csk[data-csk="isometric-stack"] .csk-stat .unit { font-size: 80px; }
+.csk[data-csk="isometric-stack"] .csk-tr .sheet { background: var(--c-accent); box-shadow: none; }

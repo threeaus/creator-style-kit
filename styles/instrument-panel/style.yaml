@@ -1,0 +1,60 @@
+id: instrument-panel
+order: 18
+name: { zh: 仪器面板, en: Instrument Panel }
+essence: 铝灰面板、穿孔点阵、点阵 LCD 数字、实体按键按下点亮、信号橙指示灯、百叶快门换场。像 Teenage Engineering / Braun 的产品说明书——理性、精密、可触摸。
+not:
+  - 不用阴影、渐变、弹簧、发光；只有 1px 发丝线
+  - 信号橙只表示「当前激活」
+  - 文字小写感、编号用 en-dash 代号（如 op–1），不加花字
+  - 数字一律用点阵字体，正文不用点阵
+references: [Teenage Engineering OP-1 / TP-7, Dieter Rams / Braun ET66, Doto dot-matrix]
+best_for: [参数/规格对比, 价格/速度/上下文长度, 工具与配置教程, 设置项讲解]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Medium.otf, weight: 500, license: "OFL-1.1" }
+  latin:   { family: "CSK Doto", file: Doto-Black.ttf, weight: 900, license: "OFL-1.1", source: "Google Fonts (static instance wght=900 ROND=0)" }
+  mono:    { family: "CSK Space Mono", file: SpaceMono-Bold.ttf, weight: 700, license: "OFL-1.1" }
+
+colors:
+  bg: "#E5E5E5"
+  surface: "#F1F2F2"
+  line: "rgba(18,17,20,0.16)"
+  text: "#121114"
+  muted: "#5E5E5E"
+  accent: "#F05A24"
+  accentInk: "#FFFFFF"
+  key: "#C5C6CD"
+
+type: { hero: 300, h1: 120, h2: 84, body: 38, label: 26, displayTracking: 0, labelTracking: 0.18 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power4.in", snap: "steps(6)", overshoot: "none" }
+  dur: { in: 0.45, out: 0.2, charStagger: 0.035, lineStagger: 0.08 }
+  textIn: segment-on         # 逐字点亮，带 2 帧闪烁
+  textOut: cut
+  emphasis: led-tag          # 关键词变成点亮的橙色按键帽
+  number: segment            # LCD 自检（全亮 8888）后 12fps 步进计数
+  list: key-press            # 按键落下 → 被按下 → 指示灯亮
+  transition: shutter        # 横向百叶快门闭合再打开
+  camera: locked
+
+layout: { chapter: top, list: article, stat: top-left }   # archetypes in runtime/kit.css
+
+texture: { grain: 0.02 }
+
+lookbook:
+  idx: "{n}"
+  textures: '<div class="tex tex-perf"></div><div class="tex tex-grain"></div><div class="ip-plate"><span>csk–18</span><span>instrument panel</span><span>● rec</span></div>'
+
+sound:
+  character: 机械按键、拨杆、继电器；短、准、带一点金属
+  kit:
+    title:      [{ src: "uisfx:mechanical/open", gain: -8 }]
+    list:       [{ src: "kenney-if:switch_003", gain: -9 }, { src: "kenney-if:switch_005", gain: -9 }, { src: "kenney-if:switch_007", gain: -9 }]
+    transition: [{ src: "kenney-rpg:metalClick", gain: -9 }]
+    tick:       [{ src: "uisfx:mechanical/typing", gain: -14 }]
+    hit:        [{ src: "uisfx:mechanical/snap", gain: -8 }]
+    reveal:     [{ src: "uisfx:mechanical/complete", gain: -7 }]
+    outro:      [{ src: "kenney-rpg:metalLatch", gain: -9 }]
+  rules: { maxPerSecond: 0.75, heroMax: 2, silentShare: 0.6 }

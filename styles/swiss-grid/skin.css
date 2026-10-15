@@ -1,0 +1,3 @@
+/* swiss-grid */
+.csk[data-csk="swiss-grid"] .csk-chapter .num { color: var(--c-text); }
+.csk[data-csk="swiss-grid"] .csk-stat .val { color: var(--c-text); }

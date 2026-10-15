@@ -1,0 +1,14 @@
+/* data-journal — FT-style chart page */
+.csk[data-csk="data-journal"] .dj-bar { position: absolute; left: 80px; top: 170px; width: 110px; height: 14px; background: var(--c-claret); }
+.csk[data-csk="data-journal"] .dj-src { position: absolute; left: 80px; right: 80px; bottom: 520px; padding-top: 14px; border-top: 1px solid var(--c-line); font-family: var(--f-mono); font-size: 26px; color: var(--c-muted); }
+.csk[data-csk="data-journal"] .csk-chapter .num { font-size: 180px; }
+.csk[data-csk="data-journal"] .csk-chapter .rule { height: 1.5px; opacity: 0.6; }
+.csk[data-csk="data-journal"] .csk-list li { display: block; padding: 22px 0 52px; }
+.csk[data-csk="data-journal"] .csk-list li .idx { display: none; }
+.csk[data-csk="data-journal"] .csk-list li .txt { font-family: var(--f-body); font-weight: var(--w-body); font-size: 46px; }
+.csk[data-csk="data-journal"] .csk-list li .rule { display: none; }
+.csk[data-csk="data-journal"] .csk-lval { bottom: 34px; font-size: 48px; }
+.csk[data-csk="data-journal"] .csk-list li:first-child .csk-lval { color: var(--c-accent); }
+.csk[data-csk="data-journal"] .csk-stat .unit { font-size: 72px; }
+.csk[data-csk="data-journal"] .csk-stat .val { color: var(--c-accent); }
+.csk[data-csk="data-journal"] .csk-tr .sheet.edge-y::before, .csk[data-csk="data-journal"] .csk-tr .sheet.edge-y::after { background: var(--c-claret); height: 10px; }

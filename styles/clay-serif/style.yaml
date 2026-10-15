@@ -1,0 +1,60 @@
+id: clay-serif
+order: 17
+name: { zh: 暖陶书卷, en: Clay Serif }
+essence: 象牙白纸、黏土橙、温润衬线、手绘细下划线、慢而稳的淡入。像一本安静的书——适合讲 Claude / Opus 的思考方式，可信、有温度。
+not:
+  - 只借用色彩气质，不用任何官方 Logo、星芒图形或品牌字体
+  - 黏土橙每个画面只给一个元素
+  - 不用硬切、弹跳、故障效果
+  - 不用纯黑纯白；墨色用 #141413，底色用象牙白
+references: ["Anthropic 公开品牌色板（clay #D97757 / ivory #FAF9F5 / slate #141413）", 书籍排版, Fraunces]
+best_for: [Opus / Claude 专题, 深度思考类口播, 教程开场与总结, 观点输出]
+
+fonts:
+  display: { family: "CSK Noto Serif SC", file: NotoSerifSC-SemiBold.otf, weight: 600, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Regular.otf, weight: 400, license: "OFL-1.1" }
+  latin:   { family: "CSK Fraunces", file: Fraunces-Soft600.ttf, weight: 600, license: "OFL-1.1", source: "Google Fonts (static instance opsz=144 wght=600 SOFT=50)" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1" }
+  note:    { family: "CSK WenKai", file: LXGWWenKai-Medium.ttf, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#F0EEE6"
+  surface: "#FAF9F5"
+  line: "rgba(20,20,19,0.10)"
+  text: "#141413"
+  muted: "#6A6963"
+  accent: "#D97757"
+  accentInk: "#FAF9F5"
+
+type: { hero: 320, h1: 128, h2: 88, body: 40, label: 26, displayTracking: -0.005, labelTracking: 0.12 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.9, out: 0.4, charStagger: 0.02, lineStagger: 0.14 }
+  textIn: fade-up
+  textOut: fade
+  emphasis: underline-soft   # 黏土色手绘细下划线
+  number: soft-count
+  list: fade-rows
+  transition: dip            # 柔和淡到纸色
+  camera: drift
+
+layout: { chapter: low-left, list: low, stat: low-left }   # archetypes in runtime/kit.css
+
+texture: { grain: 0.035 }
+
+lookbook:
+  idx: "—"
+  textures: '<div class="tex tex-grain"></div>'
+
+sound:
+  character: 柔软、温暖、木质；像在书房里翻书和落笔
+  kit:
+    title:      [{ src: "uisfx:soft/open", gain: -7 }]
+    list:       [{ src: "uisfx:soft/progress-step", gain: -10, pitch: [0, 2, 4] }]
+    transition: [{ src: "kenney-rpg:bookFlip2", gain: -10 }]
+    hit:        [{ src: "uisfx:soft/snap", gain: -9 }]
+    highlight:  [{ src: "uisfx:organic/swipe", gain: -10 }]
+    reveal:     [{ src: "uisfx:soft/complete", gain: -7 }]
+    outro:      [{ src: "uisfx:soft/success", gain: -8 }]
+  rules: { maxPerSecond: 0.55, heroMax: 1, silentShare: 0.75 }

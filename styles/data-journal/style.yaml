@@ -1,0 +1,58 @@
+id: data-journal
+order: 7
+name: { zh: 数据新闻, en: Data Journal }
+essence: FT 三文鱼纸色、衬线标题、直接标注的横向条形图、每张图都有出处。冷静、可信、有据可查——评测结果的标准答案。
+not:
+  - 不用 3D 柱状图、不用渐变填充、不用发光
+  - 竞品一律灰色，只有主角模型用强调色
+  - 不用图例，标签直接写在条形旁边
+  - 每个数据画面都要有 Source 出处行；示例数据要写明「示例」
+references: [Financial Times o-colors, The Economist, Our World in Data, lemo-opuscar/dataviz]
+best_for: [模型评测结果, 跑分对比, 价格/速度/上下文对比, 结论页]
+
+fonts:
+  display: { family: "CSK Noto Serif SC", file: NotoSerifSC-SemiBold.otf, weight: 600, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Medium.otf, weight: 500, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  latin:   { family: "CSK Newsreader", file: Newsreader-Display500.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts (static instance opsz=72 wght=500)" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts" }
+
+colors:
+  bg: "#FFF1E5"
+  surface: "#F2DFCE"
+  line: "rgba(38,42,51,0.14)"
+  text: "#262A33"
+  muted: "#66605C"
+  accent: "#0F5499"
+  accentInk: "#FFF1E5"
+  claret: "#990F3D"
+
+type: { hero: 300, h1: 124, h2: 86, body: 40, label: 26, displayTracking: 0, labelTracking: 0.1 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.55, out: 0.3, charStagger: 0, lineStagger: 0.1 }
+  textIn: clip-rise          # 从基线下方升起，像排版
+  textOut: fade
+  emphasis: knife-underline  # 强调色细横线划过
+  number: bar-grow           # 数字计数 + 下方满刻度条形同步生长
+  list: bar-chart            # 每一行是一根横向条形，数值在右端计数（li data-v）
+  transition: edge-wipe      # 纸页带着强调色边缘从上往下翻过
+  camera: locked
+
+layout: { chapter: top, list: article, stat: top-left }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, grain: 0.03 }
+
+lookbook:
+  textures: '<div class="tex tex-grain"></div><div class="dj-bar"></div><div class="dj-src">Source: {source}</div>'
+
+sound:
+  character: 纸张与铅字；干燥、克制，像翻报纸
+  kit:
+    title:      [{ src: "kenney-rpg:bookPlace1", gain: -10 }]
+    list:       [{ src: "uisfx:minimal/progress-step", gain: -8, pitch: [0, 2, 4] }]
+    transition: [{ src: "kenney-rpg:bookFlip1", gain: -9 }]
+    hit:        [{ src: "kenney-if:click_002", gain: -10 }]
+    reveal:     [{ src: "uisfx:minimal/complete", gain: -7 }]
+    outro:      [{ src: "kenney-rpg:bookClose", gain: -10 }]
+  rules: { maxPerSecond: 0.6, heroMax: 2, silentShare: 0.7 }

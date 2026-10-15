@@ -1,0 +1,4 @@
+/* editorial-paper */
+.csk[data-csk="editorial-paper"] .csk-list li { background: var(--c-surface); padding: 26px 30px; margin-bottom: 20px; box-shadow: 10px 12px 0 rgba(22,21,19,0.16); }
+.csk[data-csk="editorial-paper"] .csk-chapter .num { font-family: var(--f-display); }
+.csk[data-csk="editorial-paper"] .csk-stat .val { font-family: var(--f-display); }

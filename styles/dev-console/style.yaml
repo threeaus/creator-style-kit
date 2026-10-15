@@ -1,0 +1,61 @@
+id: dev-console
+name: { zh: 终端控制台, en: Dev Console }
+essence: GitHub 暗色、等宽字、打字机与乱码解码、选区高亮。像真的在终端里操作——最适合 AI / Claude Code 录屏段落。
+not:
+  - 不用卡通贴纸和圆润弹性
+  - 不用叠化，用硬切或 3 帧切片故障
+  - 绿色只表示成功，橙色只表示提醒
+  - 打字声要很轻（-30 dB），不是每个字都响
+references: [GitHub dark theme, 终端/黑客美学, kinetic-reel glitch, HyperFrames hacker-flip-3d]
+best_for: [Claude Code / AI 工具录屏, 提示词展示, 代码与命令, 技术细节]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Black.otf, weight: 900, license: "OFL-1.1" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1" }
+  latin:   { family: "JetBrains Mono", bundled: true, weight: 800, license: "OFL-1.1" }
+  mono:    { family: "JetBrains Mono", bundled: true, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#0D1117"
+  surface: "#161B22"
+  line: "#30363D"
+  text: "#E6EDF3"
+  muted: "#8B949E"
+  accent: "#3FB950"
+  accentInk: "#0D1117"
+  purple: "#A371F7"
+  orange: "#F0883E"
+  select: "rgba(56,139,253,0.40)"
+
+type: { hero: 300, h1: 120, h2: 84, body: 38, label: 26, displayTracking: -0.01, labelTracking: 0.04 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power4.in", snap: "power4.inOut", overshoot: "none" }
+  dur: { in: 0.5, out: 0.2, charStagger: 0.03, lineStagger: 0.12 }
+  textIn: type-scramble      # 逐字打出，未定字符先以乱码闪烁
+  emphasis: selection        # 像鼠标选中文字一样的蓝色选区扫过
+  number: scramble-lock      # 等宽数字乱码后锁定
+  list: terminal-lines       # "$ " 提示符 + 逐行打出 + 绿色 ✓
+  transition: glitch-slice   # 3 帧切片位移 + 色差
+  camera: zoom-region        # 推向活动区域，周围压暗
+
+layout: { chapter: top, list: head-top, stat: left }   # archetypes in runtime/kit.css
+
+texture: { scanlines: 0.035, grid: 0, caret: true, vignette: 0.4 }
+
+order: 6
+lookbook:
+  textures: '<div class="tex tex-scan"></div><div class="tex tex-vignette"></div><div class="win"><div class="bar"><i></i><i></i><i></i></div></div>'
+  idx: "$"
+
+sound:
+  character: 数字化、短促；故障噼啪、按键轻响，硬切之间的安静
+  kit:
+    title:      [{ src: "synth:stutter", gain: -10 }]
+    list:       [{ src: "uisfx:scifi/select", gain: -8 }, { src: "uisfx:scifi/progress-step", gain: -8 }, { src: "uisfx:scifi/check", gain: -8 }]
+    transition: [{ src: "kenney-if:glitch_002", gain: -14 }, { src: "synth:bitburst", gain: -14 }]
+    tick:       [{ src: "uisfx:mechanical/typing", gain: -14 }]
+    hit:        [{ src: "uisfx:scifi/snap", gain: -8 }]
+    reveal:     [{ src: "uisfx:scifi/complete", gain: -6 }]
+    outro:      [{ src: "uisfx:scifi/sleep", gain: -8 }]
+  rules: { maxPerSecond: 0.7, heroMax: 2, silentShare: 0.65 }

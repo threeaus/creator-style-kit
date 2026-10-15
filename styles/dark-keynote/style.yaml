@@ -1,0 +1,56 @@
+id: dark-keynote
+name: { zh: 暗场发布会, en: Dark Keynote }
+essence: 近黑舞台、发丝网格、唯一一个强调色。安静、精确、昂贵——像苹果发布会和何同学的产品段落。
+not:
+  - 不用渐变彩色、不用发光霓虹
+  - 不用弹跳 / 夸张回弹（overshoot 最多 back.out(1.3)）
+  - 一个镜头里强调色只出现在一个元素上
+  - 音效几乎隐形，不用呼呼声
+references: [Apple keynote, MKBHD, 何同学, lemo-opuscar/dark-keynote]
+best_for: [口播开场, 产品/功能展示, 结论时刻, 科技教程]
+
+fonts:
+  display: { family: "CSK MiSans", file: MiSans-Heavy.otf, weight: 900, license: "MiSans 许可（免费商用，不得修改/转售）", source: "https://hyperos.mi.com/font-download/MiSans.zip" }
+  body:    { family: "CSK MiSans", file: MiSans-Medium.otf, weight: 500, license: "MiSans 许可", source: "https://hyperos.mi.com/font-download/MiSans.zip" }
+  latin:   { family: "CSK Inter Tight", file: InterTight-ExtraBold.ttf, weight: 800, license: "OFL-1.1", source: "Google Fonts" }
+  mono:    { family: "JetBrains Mono", bundled: true, weight: 700, license: "OFL-1.1" }
+
+colors:
+  bg: "#08090B"
+  surface: "#131417"
+  line: "rgba(255,255,255,0.07)"
+  text: "#F5F5F7"
+  muted: "#8E8E93"
+  accent: "#C8F25A"
+  accentInk: "#0A0B0C"
+
+type: { hero: 320, h1: 132, h2: 92, body: 40, label: 26, displayTracking: -0.02, labelTracking: 0.32 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.75, out: 0.35, charStagger: 0.028, lineStagger: 0.09 }
+  textIn: blur-rise          # 模糊 14px + 上浮 28px → 清晰
+  emphasis: accent-glint     # 关键词变强调色 + 一道光扫过
+  number: scramble-lock      # 数字先乱码，再逐位锁定
+  list: rise-dim             # 新条目上浮出现，旧条目压暗到 35%
+  transition: light-sweep    # 斜向光带扫过换场
+  camera: slow-push          # 背景 2–3% 缓推
+
+layout: { chapter: center, list: head-top, stat: center }   # archetypes in runtime/kit.css
+
+texture: { grid: 48, gridOpacity: 0.035, radialLift: true, grain: 0.025, vignette: 0.35 }
+
+order: 1
+lookbook:
+  textures: '<div class="tex tex-lift"></div><div class="tex tex-grid"></div><div class="tex tex-grain"></div><div class="tex tex-vignette"></div>'
+
+sound:
+  character: 几乎隐形、高频、干净；玻璃与正弦音，无低频轰鸣，默认是安静
+  kit:
+    title:      [{ src: "uisfx:glass/open", gain: -4 }]
+    list:       [{ src: "uisfx:minimal/progress-step", gain: -6, pitch: [0, 2, 4] }]
+    transition: [{ src: "synth:air-whoosh-short", gain: -10 }, { src: "uisfx:glass/swipe", gain: -8 }]
+    hit:        [{ src: "uisfx:glass/snap", gain: -6 }]
+    reveal:     [{ src: "uisfx:glass/complete", gain: -5 }]
+    outro:      [{ src: "uisfx:glass/success", gain: -6 }]
+  rules: { maxPerSecond: 0.66, heroMax: 2, silentShare: 0.7 }

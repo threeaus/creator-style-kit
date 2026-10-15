@@ -1,0 +1,21 @@
+/* bauhaus-geometry — primaries + black, shapes as indices */
+.csk[data-csk="bauhaus-geometry"] .bh-deco .sq { position: absolute; right: 80px; top: 150px; width: 110px; height: 110px; background: var(--c-blue); }
+.csk[data-csk="bauhaus-geometry"] .bh-deco .tri { position: absolute; right: 215px; top: 150px; width: 110px; height: 110px; background: var(--c-yellow); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.csk[data-csk="bauhaus-geometry"] .bh-deco .ln { position: absolute; left: 80px; right: 80px; top: 300px; height: 3px; background: var(--c-text); }
+.csk[data-csk="bauhaus-geometry"] .csk-chapter .num { color: var(--c-blue); font-size: 220px; }
+.csk[data-csk="bauhaus-geometry"] .csk-chapter .rule { height: 6px; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li { align-items: center; padding: 28px 0; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li .idx { min-width: 70px; width: 70px; height: 70px; font-size: 0; background: var(--c-accent); border-radius: 50%; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li:nth-child(2) .idx { background: var(--c-blue); border-radius: 0; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li:nth-child(3) .idx { background: var(--c-yellow); border-radius: 0; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.csk[data-csk="bauhaus-geometry"] .csk-list li .txt { font-size: 64px; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li .rule { display: none; }
+.csk[data-csk="bauhaus-geometry"] .csk-list li:nth-child(2) .csk-block { background: var(--c-blue); }
+.csk[data-csk="bauhaus-geometry"] .csk-list li:nth-child(3) .csk-block { background: var(--c-yellow); }
+.csk[data-csk="bauhaus-geometry"] .csk-shape { background: var(--c-yellow); }
+.csk[data-csk="bauhaus-geometry"] .csk-stat .val { position: relative; }
+.csk[data-csk="bauhaus-geometry"] .csk-stat .unit, .csk[data-csk="bauhaus-geometry"] .csk-stat .note { position: relative; }
+.csk[data-csk="bauhaus-geometry"] .csk-stat .unit { font-size: 80px; margin-top: 30px; }
+
+/* split chapter: number starts under the deco rule (y 300) */
+.csk[data-csk="bauhaus-geometry"][data-l-chapter="split"] .csk-chapter { top: 360px; }

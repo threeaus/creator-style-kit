@@ -1,0 +1,13 @@
+/* instrument-panel — aluminium plate, round speaker grille, key caps with LEDs */
+.csk[data-csk="instrument-panel"] .tex-perf { left: auto; top: auto; right: 70px; bottom: 150px; width: 300px; height: 300px; border-radius: 50%; opacity: 0.9; }
+.csk[data-csk="instrument-panel"] .ip-plate { position: absolute; left: 80px; right: 80px; top: 110px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 20px; letter-spacing: 0.12em; color: var(--c-muted); border-bottom: 1px solid var(--c-line); padding-bottom: 16px; }
+.csk[data-csk="instrument-panel"] .t-label { text-transform: lowercase; }
+.csk[data-csk="instrument-panel"] .csk-chapter .num { color: var(--c-accent); font-size: 200px; letter-spacing: 0; }
+.csk[data-csk="instrument-panel"] .csk-chapter .rule { height: 1px; }
+.csk[data-csk="instrument-panel"] .csk-list li { align-items: center; padding: 26px 32px; margin-bottom: 26px; background: var(--c-surface); border: 1px solid var(--c-line); border-radius: 10px; box-shadow: 0 6px 0 var(--c-key); }
+.csk[data-csk="instrument-panel"] .csk-list li .idx { min-width: 20px; width: 20px; height: 20px; border-radius: 50%; background: var(--c-key); font-size: 0; box-shadow: none; }
+.csk[data-csk="instrument-panel"] .csk-list li .idx[data-led="1"] { background: var(--c-accent); box-shadow: 0 0 0 4px rgba(240,90,36,0.18); }
+.csk[data-csk="instrument-panel"] .csk-list li .txt { font-size: 54px; }
+.csk[data-csk="instrument-panel"] .csk-list li .rule { display: none; }
+.csk[data-csk="instrument-panel"] .csk-stat .val { letter-spacing: 0; }
+.csk[data-csk="instrument-panel"] .csk-stat .unit { font-size: 64px; }

@@ -1,0 +1,56 @@
+id: swiss-grid
+name: { zh: 瑞士网格, en: Swiss Grid }
+essence: 纸色底、墨黑字、一个信号红。网格锁定、只用两种曲线、动作落在节拍上——像回形针的信息图和瑞士海报。
+not:
+  - 不用阴影、发光、渐变
+  - 不用弹簧 / 回弹，只有 snap 曲线和线性
+  - 不用叠化转场
+  - 信号红只给一个元素
+references: [Josef Müller-Brockmann, 回形针 PaperClip, lemo-opuscar/swiss-motion]
+best_for: [机制讲解, 数据/对比, 流程拆解, 录屏标注]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Black.otf, weight: 900, license: "OFL-1.1", source: "Google Fonts / adobe-fonts" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1", source: "Google Fonts" }
+  latin:   { family: "CSK Archivo", file: Archivo-Black900.ttf, weight: 900, license: "OFL-1.1", source: "Google Fonts" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts" }
+
+colors:
+  bg: "#EAE9E5"
+  surface: "#FFFFFF"
+  line: "rgba(17,17,17,0.10)"
+  text: "#111111"
+  muted: "#6B6B6B"
+  accent: "#E30613"
+  accentInk: "#FFFFFF"
+
+type: { hero: 360, h1: 140, h2: 96, body: 40, label: 26, displayTracking: -0.03, labelTracking: 0.08 }
+
+motion:
+  ease: { enter: "cubic(0.7,0,0.2,1)", exit: "cubic(0.7,0,0.2,1)", snap: "cubic(0.7,0,0.2,1)", overshoot: "none" }
+  dur: { in: 0.5, out: 0.3, charStagger: 0, lineStagger: 0.08 }
+  textIn: clip-rise          # 从基线下方裁切升起，无模糊
+  emphasis: knife-underline  # 一刀红线划过关键词
+  number: step-climb         # 数字逐级跳升，等宽数字
+  list: index-snap           # "01 /" 编号先到，横线再划出，文字最后
+  transition: column-wipe    # 墨色面板按列推过
+  camera: locked             # 镜头锁死，只有版面在动
+
+layout: { chapter: split, list: head-top, stat: low-left }   # archetypes in runtime/kit.css
+
+texture: { grid: 6col, gridOpacity: 0.08, registration: true, grain: 0 }
+
+order: 2
+lookbook:
+  textures: '<div class="tex tex-cols"></div><div class="tex tex-reg"></div>'
+
+sound:
+  character: 干燥的印刷声：活字 clack、刀切 snick、纸张，无合成音
+  kit:
+    title:      [{ src: "kenney-imp:impactWood_light_002", gain: -10 }]
+    list:       [{ src: "kenney-if:switch_002", gain: -10 }, { src: "kenney-if:switch_004", gain: -10 }, { src: "kenney-if:switch_006", gain: -10 }]
+    transition: [{ src: "kenney-rpg:drawKnife2", gain: -12 }]
+    hit:        [{ src: "kenney-rpg:knifeSlice", gain: -10 }]
+    reveal:     [{ src: "uisfx:mechanical/complete", gain: -8 }]
+    outro:      [{ src: "kenney-rpg:bookClose", gain: -10 }]
+  rules: { maxPerSecond: 0.66, heroMax: 2, silentShare: 0.65 }

@@ -1,0 +1,203 @@
+/* Creator Style Kit — shared component + texture layer.
+   Every visual value comes from CSS variables set by the style sheet (build_style.py),
+   so the same markup re-skins per style. Scope everything under .csk. */
+
+.csk { position: absolute; inset: 0; overflow: hidden; color: var(--c-text); background: var(--c-bg);
+  font-family: var(--f-body), var(--f-display), sans-serif; -webkit-font-smoothing: antialiased; }
+.csk * { box-sizing: border-box; }
+.csk .csk-bg { position: absolute; inset: 0; background: var(--c-bg); }
+.csk .csk-scene { position: absolute; inset: 0; transform-origin: 50% 45%; }
+.csk .ch { display: inline-block; white-space: pre; }
+.csk .wd { display: inline-block; white-space: nowrap; }
+.csk .csk-mask { display: block; overflow: hidden; padding: 0.06em 0 0.12em; margin: -0.06em 0 -0.12em; }
+.csk .csk-mask > .csk-in { display: block; }
+
+/* ---------- type roles ---------- */
+.csk .t-display { font-family: var(--f-display); font-weight: var(--w-display); letter-spacing: var(--tr-display); line-height: 1.04; }
+.csk .t-latin { font-family: var(--f-latin), var(--f-display); font-weight: var(--w-latin); font-style: var(--s-latin, normal); }
+.csk .t-label { font-family: var(--f-mono); font-weight: var(--w-mono); font-size: var(--fs-label); letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--c-muted); }
+.csk .t-body { font-family: var(--f-body); font-weight: var(--w-body); font-size: var(--fs-body); line-height: 1.45; }
+.csk .t-note { font-family: var(--f-note, var(--f-body)); }
+.csk em { font-style: normal; }
+.csk .acc, .csk [data-acc] { color: var(--c-accent); }
+
+/* ---------- components ---------- */
+.csk .csk-chapter { position: absolute; left: 80px; right: 80px; top: 640px; }
+.csk .csk-chapter .num { font-family: var(--f-latin), var(--f-display); font-weight: var(--w-latin); font-size: 200px; line-height: 0.9; color: var(--c-accent); letter-spacing: -0.04em; }
+.csk .csk-chapter .ttl { margin-top: 26px; font-size: var(--fs-h1); }
+.csk .csk-chapter .sub { margin-top: 30px; }
+.csk .csk-chapter .rule { margin-top: 30px; height: 3px; width: 100%; background: var(--c-text); transform-origin: 0 50%; opacity: 0.85; }
+
+.csk .csk-head { position: absolute; left: 80px; right: 80px; top: 420px; }
+.csk .csk-head .ttl { margin-top: 20px; font-size: var(--fs-h2); }
+
+.csk .csk-list { position: absolute; left: 80px; right: 80px; top: 820px; list-style: none; margin: 0; padding: 0; }
+.csk .csk-list li { position: relative; display: flex; align-items: baseline; gap: 28px; padding: 26px 0; }
+.csk .csk-list li .idx { font-family: var(--f-mono); font-weight: var(--w-mono); font-size: 30px; color: var(--c-accent); min-width: 70px; }
+.csk .csk-list li .txt { font-family: var(--f-display); font-weight: var(--w-display); font-size: 66px; line-height: 1.1; }
+.csk .csk-list li .rule { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--c-line); transform-origin: 0 50%; }
+
+.csk .csk-stat { position: absolute; left: 80px; right: 80px; top: 600px; }
+.csk .csk-stat .val { font-family: var(--f-latin), var(--f-display); font-weight: var(--w-latin); font-size: var(--fs-hero); line-height: 0.9; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.csk .csk-stat .val .dg { display: inline-block; }
+/* unit glyph (%, ×, x) sits on the figure, not on the unit line: <div class="val" data-suffix="%"> — survives every count mode */
+.csk .csk-stat .val[data-suffix]::after, .csk .csk-stat .val .csk-in[data-suffix]::after { content: attr(data-suffix); display: inline-block; font-size: 0.42em; letter-spacing: 0; margin-left: 0.04em; vertical-align: top; line-height: 1; padding-top: 0.1em; }
+.csk .csk-stat .val[data-suffix] > .csk-mask { display: inline-block; vertical-align: top; }
+.csk .csk-stat .val.csk-sfx-in[data-suffix]::after { content: none; }  /* masked modes: the inner .csk-in carries the suffix */
+.csk .csk-stat .unit { font-family: var(--f-display); font-weight: var(--w-display); font-size: 96px; margin-top: 18px; }
+.csk .csk-stat .note { margin-top: 44px; font-size: 44px; }
+
+.csk .csk-tag { position: absolute; left: 80px; right: 80px; bottom: 300px; display: flex; flex-direction: column; gap: 12px; }
+.csk .csk-tag .k { font-family: var(--f-mono); font-weight: var(--w-mono); font-size: 22px; letter-spacing: 0.2em; color: var(--c-muted); }
+.csk .csk-tag .n { font-family: var(--f-display); font-weight: var(--w-display); font-size: 54px; }
+.csk .csk-tag .n small { font-family: var(--f-latin), var(--f-display); font-weight: var(--w-latin); font-style: var(--s-latin, normal); font-size: 34px; color: var(--c-muted); margin-left: 16px; }
+.csk .csk-tag .sw { display: flex; gap: 10px; margin-top: 6px; }
+.csk .csk-tag .sw i { width: 34px; height: 34px; border-radius: 50%; display: block; outline: 1px solid var(--c-line); }
+
+/* emphasis helpers created by kit.js */
+.csk .csk-uline { position: absolute; left: 0; right: 0; bottom: -0.06em; height: 0.09em; background: var(--c-accent); transform-origin: 0 50%; }
+.csk .csk-emph { position: relative; display: inline-block; }
+.csk .csk-scribble { position: absolute; left: -4%; width: 108%; bottom: -0.32em; height: 0.42em; overflow: visible; }
+.csk .csk-echo { position: absolute; left: 0; top: 0; pointer-events: none; }
+.csk .csk-echo, .csk .csk-echo * { color: transparent !important; -webkit-text-stroke: 2px var(--c-text); }
+.csk .csk-caret { display: inline-block; width: 0.5em; height: 0.95em; background: var(--c-accent); vertical-align: -0.1em; margin-left: 0.08em; }
+
+/* transition overlay parts */
+.csk .csk-tr { position: absolute; inset: 0; pointer-events: none; z-index: 50; }
+.csk .csk-tr .p { position: absolute; top: 0; bottom: 0; background: var(--c-text); }
+.csk .csk-tr .sheet { position: absolute; inset: 0; background: var(--c-surface); box-shadow: -30px 0 60px rgba(0,0,0,0.25); }
+.csk .csk-tr .band { position: absolute; top: -40%; bottom: -40%; width: 46%; left: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.22) 45%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0.22) 55%, rgba(255,255,255,0)); transform: rotate(14deg); mix-blend-mode: screen; }
+.csk .csk-tr .card { position: absolute; left: 50%; top: 50%; width: 1080px; height: 1920px; margin: -960px 0 0 -540px; border-radius: 60px; background: var(--c-accent); }
+.csk .csk-tr .slat { position: absolute; top: 0; bottom: 0; }
+.csk .csk-tr .bar { position: absolute; left: 0; right: 0; background: var(--c-accent); }
+
+/* ---------- textures ---------- */
+.csk .tex { position: absolute; inset: 0; pointer-events: none; }
+.csk .tex-grid { background-image: linear-gradient(var(--c-line) 1px, transparent 1px), linear-gradient(90deg, var(--c-line) 1px, transparent 1px); background-size: var(--grid) var(--grid); opacity: var(--grid-op, 1); }
+.csk .tex-cols { background-image: repeating-linear-gradient(90deg, transparent 0, transparent 132px, var(--c-line) 132px, var(--c-line) 134px); background-position: 80px 0; }
+.csk .tex-lift { background: radial-gradient(1100px 900px at 50% 32%, rgba(255,255,255,0.06), rgba(255,255,255,0) 70%); }
+.csk .tex-vignette { background: radial-gradient(130% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,var(--vig, 0.4))); }
+.csk .tex-grain { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"); opacity: var(--grain, 0.05); mix-blend-mode: overlay; }
+.csk .tex-paper { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='4' seed='9'/><feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.22 0'/></filter><rect width='400' height='400' filter='url(%23p)'/></svg>"); opacity: 0.9; mix-blend-mode: multiply; }
+.csk .tex-halftone { background-image: radial-gradient(var(--c-text) 1.3px, transparent 1.6px); background-size: 9px 9px; opacity: var(--halftone, 0.08); }
+.csk .tex-dots { background-image: radial-gradient(var(--c-muted) 2px, transparent 2.5px); background-size: var(--dots) var(--dots); opacity: var(--dots-op, 0.12); }
+.csk .tex-scan { background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(255,255,255,var(--scan, 0.03)) 3px); }
+.csk .tex-reg::before, .csk .tex-reg::after { content: ""; position: absolute; width: 44px; height: 44px; border: 2px solid var(--c-text); opacity: 0.5; }
+.csk .tex-reg::before { left: 40px; top: 180px; border-right: none; border-bottom: none; }
+.csk .tex-reg::after { right: 40px; bottom: 260px; border-left: none; border-top: none; }
+.csk .tape { position: absolute; left: -200px; right: -200px; height: 76px; display: flex; align-items: center; white-space: nowrap; overflow: hidden;
+  background: var(--c-accent); color: var(--c-accent-ink); font-family: var(--f-mono); font-weight: 700; font-size: 34px; letter-spacing: 0.12em; }
+.csk .tape .run { display: block; white-space: nowrap; }
+
+/* ======================================================================
+   v2 primitives — used by the styles added 2026-10 (see STYLES.md).
+   Colours come from the same tokens; extra tokens (--c-accent2, --c-seal…)
+   fall back to accent/text when a style does not define them.
+   ====================================================================== */
+
+/* text-in helpers */
+.csk .csk-write .ch { -webkit-text-fill-color: color-mix(in srgb, currentColor calc(var(--wf, 1) * 100%), transparent); -webkit-text-stroke: calc((1 - var(--wf, 1)) * 2.2px) currentColor; }
+.csk .csk-guide { position: absolute; left: -0.2em; right: -0.4em; bottom: 0.06em; height: 1.5px; background: var(--c-accent); transform-origin: 0 50%; }
+.csk .csk-scanbar { position: absolute; top: -0.1em; bottom: -0.1em; width: 6px; margin-left: -3px; background: var(--c-accent); box-shadow: 0 0 18px var(--c-accent); }
+.csk .csk-block { position: absolute; inset: 0; background: var(--c-accent); }
+
+/* emphasis helpers */
+.csk .csk-box { position: absolute; left: -0.16em; right: -0.16em; top: -0.04em; bottom: -0.02em; width: calc(100% + 0.32em); height: calc(100% + 0.06em); overflow: visible; pointer-events: none; }
+.csk .csk-dim { position: absolute; left: 0; right: 0; top: -0.28em; height: 2px; background: var(--c-accent); transform-origin: 50% 50%; }
+.csk .csk-dim::before, .csk .csk-dim::after { content: ""; position: absolute; top: -0.12em; width: 2px; height: 0.26em; background: var(--c-accent); }
+.csk .csk-dim::before { left: 0; } .csk .csk-dim::after { right: 0; }
+.csk .csk-brk { position: absolute; width: 0.3em; height: 0.3em; border: 0 solid var(--c-accent); }
+.csk .csk-brk.tl { left: -0.14em; top: -0.06em; border-left-width: 3px; border-top-width: 3px; }
+.csk .csk-brk.tr { right: -0.14em; top: -0.06em; border-right-width: 3px; border-top-width: 3px; }
+.csk .csk-brk.bl { left: -0.14em; bottom: -0.06em; border-left-width: 3px; border-bottom-width: 3px; }
+.csk .csk-brk.br { right: -0.14em; bottom: -0.06em; border-right-width: 3px; border-bottom-width: 3px; }
+.csk .csk-seal { position: absolute; right: -0.62em; top: -0.42em; width: 0.56em; height: 0.56em; display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-size: 0.5em; line-height: 1; color: var(--c-bg); background: var(--c-seal, var(--c-accent)); border-radius: 0.06em; font-style: normal; }
+/* gradient is painted per glyph (split chars are inline-blocks, which a parent's background-clip:text would not cover); --gp drives the sweep */
+.csk [data-grad="1"], .csk [data-grad="1"] .ch { background-image: linear-gradient(100deg, var(--c-accent) 0%, var(--c-accent2, var(--c-text)) 45%, var(--c-accent) 90%); background-size: 260% 100%;
+  background-position: var(--gp, 0%) 0%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.csk .csk-shape { position: absolute; left: 50%; top: 52%; width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; border-radius: 50%; background: var(--c-accent); z-index: -1; }
+.csk [data-led="1"] { background: var(--c-accent); color: var(--c-accent-ink); box-shadow: 0 0 0 0.08em var(--c-accent); border-radius: 0.08em; }
+
+/* number helpers */
+.csk .csk-numbar { position: relative; height: 26px; margin-top: 30px; background: var(--c-line); }
+.csk .csk-numbar .fill { position: absolute; inset: 0; background: var(--c-accent); transform-origin: 0 50%; }
+.csk .csk-gauge { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -450px; overflow: visible; pointer-events: none; }
+.csk .csk-gauge .tk { stroke: var(--c-muted); stroke-width: 0.35; opacity: 0.7; }
+.csk .csk-gauge .trk { fill: none; stroke: var(--c-line); stroke-width: 1.6; }
+.csk .csk-gauge .arc { fill: none; stroke: var(--c-accent); stroke-width: 1.6; stroke-linecap: round; filter: drop-shadow(0 0 1.2px var(--c-accent)); }
+.csk .csk-pform { position: absolute; left: 0; top: 0.05em; height: 1em; pointer-events: none; }
+.csk .csk-pform .pd { position: absolute; border-radius: 50%; background: var(--c-text); box-shadow: 0 0 14px var(--c-accent); }
+.csk .csk-brush { position: absolute; left: -40px; top: 40px; width: 900px; height: 230px; overflow: visible; z-index: 0; pointer-events: none; }
+.csk .csk-brush path { stroke: var(--c-text); opacity: 0.09; }
+.csk .csk-geo { position: absolute; left: -60px; top: -120px; width: 620px; height: 620px; border-radius: 50%; background: var(--c-accent); }
+
+/* list helpers */
+.csk .csk-lbar { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: var(--c-muted); opacity: 0.55; transform-origin: 0 50%; }
+.csk .csk-list li:first-child .csk-lbar { background: var(--c-accent); opacity: 1; }
+.csk .csk-lval { position: absolute; right: 0; bottom: 30px; font-family: var(--f-latin), var(--f-display); font-weight: var(--w-latin); font-size: 52px; font-variant-numeric: tabular-nums; font-style: normal; }
+.csk .csk-sheen { position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.28) 50%, transparent 65%); background-size: 250% 100%; mix-blend-mode: screen; }
+
+/* transition parts */
+.csk .csk-tr .dip { position: absolute; inset: 0; background: var(--c-bg); opacity: 0; }
+.csk .csk-tr .sheet.edge-y { box-shadow: none; }
+.csk .csk-tr .sheet.edge-y::before, .csk .csk-tr .sheet.edge-y::after { content: ""; position: absolute; left: 0; right: 0; height: 12px; background: var(--c-accent); }
+.csk .csk-tr .sheet.edge-y::before { top: 0; } .csk .csk-tr .sheet.edge-y::after { bottom: 0; }
+.csk .csk-tr .sheet.edge-x { box-shadow: none; background-color: var(--c-bg); }
+.csk .csk-tr .sheet.edge-x::before, .csk .csk-tr .sheet.edge-x::after { content: ""; position: absolute; top: 0; bottom: 0; width: 3px; background: var(--c-accent); }
+.csk .csk-tr .sheet.edge-x::before { left: 0; } .csk .csk-tr .sheet.edge-x::after { right: 0; }
+.csk .csk-tr .pw { position: absolute; left: 50%; top: 45%; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: var(--c-text); box-shadow: 0 0 12px var(--c-accent); }
+.csk .csk-tr .frost { position: absolute; inset: 0; background: color-mix(in srgb, var(--c-bg) 35%, transparent); opacity: 0; }
+.csk .csk-tr .iris { position: absolute; left: 50%; top: 50%; width: 2400px; height: 2400px; margin: -1200px 0 0 -1200px; border-radius: 50%; background: var(--c-accent); }
+.csk .csk-tr .ink { position: absolute; left: 50%; top: 48%; width: 2800px; height: 2800px; margin: -1400px 0 0 -1400px; border-radius: 50%;
+  background: radial-gradient(circle, var(--c-text) 0 52%, color-mix(in srgb, var(--c-text) 60%, transparent) 60%, transparent 70%); filter: url(#csk-ink-edge); }
+.csk .csk-tr .blade { position: absolute; left: 0; right: 0; background: var(--c-surface); border-bottom: 2px solid var(--c-line); }
+
+/* v2 textures */
+.csk .tex-bp { background-image:
+    linear-gradient(var(--c-line) 1px, transparent 1px), linear-gradient(90deg, var(--c-line) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--c-line) 45%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--c-line) 45%, transparent) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px; }
+.csk .tex-iso { background-image: repeating-linear-gradient(30deg, var(--c-line) 0 1px, transparent 1px 56px), repeating-linear-gradient(150deg, var(--c-line) 0 1px, transparent 1px 56px); opacity: 0.9; }
+.csk .tex-blobs { filter: blur(110px) saturate(1.2); }
+.csk .tex-blobs .blob { position: absolute; border-radius: 50%; opacity: 0.85; }
+.csk .tex-particles .pf { position: absolute; border-radius: 50%; background: var(--c-text); }
+.csk .tex-perf { background-image: radial-gradient(color-mix(in srgb, var(--c-text) 22%, transparent) 2.4px, transparent 2.9px); background-size: 22px 22px; opacity: 0.5; }
+.csk .tex-rice { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.05' numOctaves='5' seed='21'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.31 0 0 0 0 0.24 0 0 0 0.16 0'/></filter><rect width='500' height='500' filter='url(%23r)'/></svg>"); mix-blend-mode: multiply; }
+.csk .tex-wash { background: radial-gradient(70% 22% at 30% 100%, color-mix(in srgb, var(--c-text) 14%, transparent), transparent 70%), radial-gradient(60% 16% at 85% 96%, color-mix(in srgb, var(--c-text) 9%, transparent), transparent 70%); filter: blur(8px); }
+.csk .tex-margin { border-left: 2px solid var(--c-line); left: 64px; }
+
+.csk .csk-stat .val.csk-pform-src::after { visibility: hidden; }  /* particle-form draws the suffix as dots */
+
+/* ---------- layout archetypes ----------
+   Picked per style in style.yaml `layout: { chapter, list, stat }`; compose.py puts them on the root as
+   data-l-chapter / data-l-list / data-l-stat. Skins refine on top (same specificity, loaded later).
+   Safe area (9:16 platforms): keep reading text within y 180–1500 and clear of the right 120 px from y 900–1500. */
+
+/* chapter: left-mid (default) · center · top · low-left · split · right-mid */
+/* titles break between words, never inside one ("Opus 5.5 / 实测", not "Opus 5.5 实 / 测"), and balance their lines */
+.csk .csk-chapter .ttl, .csk .csk-head .ttl { word-break: keep-all; text-wrap: balance; }
+.csk[data-l-chapter="center"] .csk-chapter { left: 70px; right: 70px; top: 700px; text-align: center; }
+.csk[data-l-chapter="center"] .csk-chapter .rule { width: 220px; margin-left: auto; margin-right: auto; transform-origin: 50% 50%; }
+.csk[data-l-chapter="top"] .csk-chapter { top: 440px; }
+.csk[data-l-chapter="low-left"] .csk-chapter { top: auto; bottom: 560px; }
+.csk[data-l-chapter="split"] .csk-chapter { top: 200px; bottom: 560px; display: flex; flex-direction: column; justify-content: flex-end; }
+.csk[data-l-chapter="split"] .csk-chapter .num { margin-bottom: auto; font-size: 320px; }
+.csk[data-l-chapter="right-mid"] .csk-chapter { left: 200px; right: 100px; top: 620px; text-align: right; }
+.csk[data-l-chapter="right-mid"] .csk-chapter .rule { transform-origin: 100% 50%; }
+
+/* list: head-top (default) · center · article · low */
+.csk[data-l-list="center"] .csk-head { left: 120px; right: 120px; text-align: center; }
+.csk[data-l-list="center"] .csk-list { left: 200px; right: 200px; }
+.csk[data-l-list="center"] .csk-list li { justify-content: center; }
+.csk[data-l-list="article"] .csk-head { top: 300px; }
+.csk[data-l-list="article"] .csk-list { top: 660px; }
+.csk[data-l-list="low"] .csk-head { top: 560px; }
+.csk[data-l-list="low"] .csk-list { top: 930px; }
+
+/* stat: left (default) · center · low-left · top-left */
+.csk[data-l-stat="center"] .csk-stat { left: 100px; right: 100px; top: 640px; text-align: center; }
+.csk[data-l-stat="low-left"] .csk-stat { top: auto; bottom: 560px; }
+.csk[data-l-stat="top-left"] .csk-stat { top: 380px; }

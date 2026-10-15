@@ -1,0 +1,59 @@
+id: editorial-paper
+name: { zh: 报刊纸感, en: Editorial Paper }
+essence: 米色纸、粗宋体、唯一一支黄色荧光笔、手绘批注。有质感、有出处——像 Vox 和 Johnny Harris 的纪录片包装。
+not:
+  - 不用纯矢量的干净扁平感（要有纸纹、网点、阴影位移）
+  - 荧光笔每个镜头只划一个词
+  - 否定一律用红色删除线，不用别的方式
+  - 不用电子合成音效
+references: [Vox, Johnny Harris, Cele-san/vox-style-animation, lemo-opuscar/halftone-dossier]
+best_for: [行业故事, 历史/人文题材, 「为什么会这样」类叙事, 引用与出处]
+
+fonts:
+  display: { family: "CSK Noto Serif SC", file: NotoSerifSC-Black.otf, weight: 900, license: "OFL-1.1", source: "Google Fonts / adobe-fonts" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1", source: "Google Fonts" }
+  latin:   { family: "CSK Instrument Serif", file: InstrumentSerif-Italic.ttf, weight: 400, style: italic, license: "OFL-1.1", source: "Google Fonts" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts" }
+  note:    { family: "CSK WenKai", file: LXGWWenKai-Medium.ttf, weight: 500, license: "OFL-1.1", source: "https://github.com/lxgw/LxgwWenKai" }
+
+colors:
+  bg: "#F2ECDF"
+  surface: "#FBF8F1"
+  line: "rgba(22,21,19,0.14)"
+  text: "#161513"
+  muted: "#6E675C"
+  accent: "#FFD200"
+  accentInk: "#161513"
+  red: "#E5483F"
+
+type: { hero: 330, h1: 136, h2: 92, body: 40, label: 26, displayTracking: 0, labelTracking: 0.12 }
+
+motion:
+  ease: { enter: "power3.out", exit: "power3.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.55, out: 0.35, charStagger: 0, lineStagger: 0.12 }
+  textIn: paper-slap         # 纸片从 1.18 倍、略带旋转和模糊拍下，停在 0.6° 歪斜
+  emphasis: highlighter      # 黄色荧光笔从左往右涂过
+  number: stamp              # 红色印章盖下
+  list: index-cards          # 索引卡依次拍下，各自略歪
+  transition: sheet-wipe     # 一张纸从侧面滑过盖住画面
+  camera: stutter-texture    # 纸纹/网点 12fps 抖动，主体保持流畅
+
+layout: { chapter: low-left, list: article, stat: left }   # archetypes in runtime/kit.css
+
+texture: { paper: true, halftone: 0.08, grain: 0.06, stutterFps: 12, shadowOffset: "10px 12px 0 rgba(22,21,19,0.16)" }
+
+order: 3
+lookbook:
+  textures: '<div class="tex tex-paper"></div><div class="tex tex-halftone"></div><div class="tex tex-grain"></div>'
+
+sound:
+  character: 纸、木、铅笔，近距离、干燥、有触感
+  kit:
+    title:      [{ src: "kenney-rpg:bookPlace1", gain: -8 }]
+    list:       [{ src: "kenney-rpg:bookPlace2", gain: -12 }, { src: "uisfx:organic/select", gain: -8 }, { src: "kenney-rpg:bookPlace3", gain: -12 }]
+    transition: [{ src: "kenney-rpg:bookFlip2", gain: -8 }]
+    hit:        [{ src: "kenney-imp:impactWood_light_001", gain: -8 }]
+    highlight:  [{ src: "uisfx:zen/swipe", gain: -8 }]
+    reveal:     [{ src: "kenney-imp:impactWood_medium_002", gain: -7 }]
+    outro:      [{ src: "kenney-rpg:bookClose", gain: -8 }]
+  rules: { maxPerSecond: 0.66, heroMax: 2, silentShare: 0.65 }

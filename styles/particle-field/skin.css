@@ -1,0 +1,7 @@
+/* particle-field */
+.csk[data-csk="particle-field"] .csk-chapter .num { color: var(--c-accent); font-size: 170px; }
+.csk[data-csk="particle-field"] .csk-chapter .rule { height: 1px; opacity: 0.35; }
+.csk[data-csk="particle-field"] .csk-list li .idx { color: var(--c-accent); font-size: 60px; min-width: 40px; }
+.csk[data-csk="particle-field"] .csk-list li .txt { font-size: 60px; }
+.csk[data-csk="particle-field"] .csk-list li .rule { opacity: 0.6; }
+.csk[data-csk="particle-field"] .csk-stat .unit { font-size: 76px; margin-top: 40px; }

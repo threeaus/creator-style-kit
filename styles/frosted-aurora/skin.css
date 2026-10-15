@@ -1,0 +1,12 @@
+/* frosted-aurora — dim aurora blobs, frosted cards with hairline edges */
+.csk[data-csk="frosted-aurora"] .tex-blobs .b1 { left: -260px; top: 160px; width: 940px; height: 940px; background: var(--c-blobA); opacity: 0.55; }
+.csk[data-csk="frosted-aurora"] .tex-blobs .b2 { left: 420px; top: 820px; width: 1000px; height: 1000px; background: var(--c-blobB); opacity: 0.45; }
+.csk[data-csk="frosted-aurora"] .tex-blobs .b3 { left: -120px; top: 1380px; width: 760px; height: 760px; background: var(--c-blobC); opacity: 0.5; }
+.csk[data-csk="frosted-aurora"] .csk-chapter .num { font-size: 180px; color: var(--c-text); }
+.csk[data-csk="frosted-aurora"] .csk-chapter .rule { height: 2px; background: linear-gradient(90deg, var(--c-accent), var(--c-accent2), transparent); }
+.csk[data-csk="frosted-aurora"] .csk-list li { padding: 30px 38px; margin-bottom: 24px; background: rgba(255,255,255,0.05); border: 1px solid var(--c-line); border-radius: 34px; backdrop-filter: blur(30px) saturate(1.3); overflow: hidden; }
+.csk[data-csk="frosted-aurora"] .csk-list li .idx { color: var(--c-accent); }
+.csk[data-csk="frosted-aurora"] .csk-list li .txt { font-size: 58px; font-family: var(--f-body); font-weight: 400; }
+.csk[data-csk="frosted-aurora"] .csk-list li .rule { display: none; }
+.csk[data-csk="frosted-aurora"] .csk-stat .val { font-weight: 500; }
+.csk[data-csk="frosted-aurora"] .csk-stat .unit { font-size: 80px; }

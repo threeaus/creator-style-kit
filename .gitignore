@@ -1,0 +1,23 @@
+# generated lookbook projects and renders
+lookbook/
+lookbook-new/
+renders/
+out/
+*.mp4
+*.wav.tmp
+
+# macOS / exFAT metadata
+.DS_Store
+._*
+
+# python
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+
+# free-commercial fonts that may not be redistributed: scripts/fetch_fonts.py downloads them
+fonts/src/MiSans-*.otf
+fonts/src/YouSheBiaoTiHei.ttf
+# third-party reference screenshot (kept locally only)
+24种风格.jpg

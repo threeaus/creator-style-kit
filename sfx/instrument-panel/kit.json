@@ -1,0 +1,29 @@
+{
+ "style": "instrument-panel",
+ "roles": {
+  "title": [
+   "title_1.wav"
+  ],
+  "list": [
+   "list_1.wav",
+   "list_2.wav",
+   "list_3.wav"
+  ],
+  "transition": [
+   "transition_1.wav"
+  ],
+  "tick": [
+   "tick_1.wav"
+  ],
+  "hit": [
+   "hit_1.wav"
+  ],
+  "reveal": [
+   "reveal_1.wav"
+  ],
+  "outro": [
+   "outro_1.wav"
+  ]
+ },
+ "license": "CC0-1.0 (uisfx, Kenney) + generated"
+}

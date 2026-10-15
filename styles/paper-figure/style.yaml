@@ -1,0 +1,60 @@
+id: paper-figure
+order: 8
+name: { zh: 论文图表, en: Paper Figure }
+essence: 白纸、Computer Modern 衬线、行号槽、「Figure 1:」图注、matplotlib 蓝。像在读一篇 arXiv 论文——论文解读的专属语言。
+not:
+  - 不用彩色背景和装饰性图形
+  - 强调只用细线框（\boxed{}），不用荧光笔
+  - 动效几乎只有淡入，不用弹跳、不用模糊大位移
+  - 不要伪造论文截图；引用真实论文时注明作者与年份
+references: [arXiv / LaTeX, Distill.pub, matplotlib tab10, CMU Serif]
+best_for: [论文解读, 技术报告拆解, 公式与定义, 实验设置说明]
+
+fonts:
+  display: { family: "CSK Noto Serif SC", file: NotoSerifSC-SemiBold.otf, weight: 600, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Serif SC", file: NotoSerifSC-Regular.otf, weight: 400, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  latin:   { family: "CSK CMU Serif", file: CMUSerif-Bold.otf, weight: 700, license: "OFL-1.1", source: "https://mirrors.ctan.org/fonts/cm-unicode/" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts" }
+  note:    { family: "CSK CMU Serif Italic", file: CMUSerif-Italic.otf, weight: 400, style: italic, license: "OFL-1.1", source: "https://mirrors.ctan.org/fonts/cm-unicode/" }
+
+colors:
+  bg: "#FDFCF8"
+  surface: "#FFFFFF"
+  line: "rgba(17,17,17,0.12)"
+  text: "#111111"
+  muted: "#666666"
+  accent: "#1F77B4"
+  accentInk: "#FFFFFF"
+  red: "#D62728"
+
+type: { hero: 280, h1: 116, h2: 80, body: 38, label: 26, displayTracking: 0, labelTracking: 0.04 }
+
+motion:
+  ease: { enter: "cubic(0.25,0.1,0.25,1)", exit: "power1.in", snap: "power2.inOut", overshoot: "none" }
+  dur: { in: 0.6, out: 0.3, charStagger: 0.012, lineStagger: 0.1 }
+  textIn: fade-up            # 像排版一样逐字浮现，位移极小
+  textOut: fade
+  emphasis: boxed            # 细线框画出来并保留
+  number: decimal-tracker    # 精确计数，保留小数
+  list: fade-rows            # [1] [2] [3] 引用式条目依次淡入
+  transition: dip            # 安静地淡到纸色
+  camera: locked
+
+layout: { chapter: center, list: article, stat: center }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, grain: 0 }
+
+lookbook:
+  idx: "[{n}]"
+  textures: '<div class="pf-gutter">{lines}</div><div class="pf-cap">{caption}</div>'
+
+sound:
+  character: 几乎无声；只有翻页与很轻的确认音
+  kit:
+    title:      [{ src: "uisfx:zen/open", gain: -8 }]
+    list:       [{ src: "uisfx:soft/select", gain: -12 }]
+    transition: [{ src: "kenney-rpg:bookFlip3", gain: -12 }]
+    hit:        [{ src: "uisfx:soft/snap", gain: -10 }]
+    reveal:     [{ src: "uisfx:zen/complete", gain: -9 }]
+    outro:      [{ src: "uisfx:zen/success", gain: -10 }]
+  rules: { maxPerSecond: 0.5, heroMax: 1, silentShare: 0.8 }

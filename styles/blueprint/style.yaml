@@ -1,0 +1,59 @@
+id: blueprint
+order: 10
+name: { zh: 蓝图线稿, en: Blueprint }
+essence: 普鲁士蓝图纸、白色发丝线、先画辅助线再落字、尺寸标注与引出线、右下角图签。按制图顺序一层一层画出来——讲机制、讲架构。
+not:
+  - 不用实心色块和照片
+  - 线宽只有两档（1.5px 辅助线 / 3px 主线）
+  - 红色只用一次，留给最终结论
+  - 不用弹跳；所有线条用匀速（none）画出
+references: [Cyanotype / 工程制图, lemo-opuscar/blueprint, "Prussian blue #003153"]
+best_for: [系统架构, Agent 工作流, 机制拆解, 「它是怎么做到的」]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Medium.otf, weight: 500, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Regular.otf, weight: 400, license: "OFL-1.1" }
+  latin:   { family: "CSK Plex Mono", file: IBMPlexMono-Bold.ttf, weight: 700, license: "OFL-1.1", source: "Google Fonts" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Medium.ttf, weight: 500, license: "OFL-1.1", source: "Google Fonts" }
+
+colors:
+  bg: "#0B3A66"
+  surface: "#0E4377"
+  line: "rgba(231,240,249,0.16)"
+  text: "#E7F0F9"
+  muted: "#8FB3D9"
+  accent: "#7FD3FF"
+  accentInk: "#0B3A66"
+  red: "#FF6B5A"
+
+type: { hero: 280, h1: 120, h2: 84, body: 38, label: 26, displayTracking: 0.02, labelTracking: 0.14 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.6, out: 0.3, charStagger: 0, lineStagger: 0.12 }
+  textIn: draft-in           # 先画一条辅助线，文字沿线描出
+  textOut: fade
+  emphasis: dimension        # 关键词上方展开一条尺寸标注 |←→|
+  number: step-climb         # 等宽数字逐级跳升
+  list: leader-lines         # 节点 → 引出线 → 标签
+  transition: draft-wipe     # 图纸带着细线边缘横向拉过
+  camera: grid-pan           # 网格极慢平移，主体不动
+
+layout: { chapter: low-left, list: article, stat: left }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, vignette: 0.35 }
+
+lookbook:
+  idx: ""
+  textures: '<div class="tex tex-bp"></div><div class="tex tex-vignette"></div><div class="bp-block"><div><span>DWG</span><b>CSK-010</b></div><div><span>SCALE</span><b>1 : 1</b></div><div><span>REV</span><b>A</b></div></div>'
+
+sound:
+  character: 铅笔、尺子、绘图板；轻、干、带一点机械感
+  kit:
+    title:      [{ src: "kenney-if:scratch_002", gain: -10 }]
+    list:       [{ src: "kenney-if:tick_001", gain: -12 }, { src: "kenney-if:tick_002", gain: -12 }, { src: "kenney-if:tick_004", gain: -12 }]
+    transition: [{ src: "kenney-if:scroll_003", gain: -10 }]
+    hit:        [{ src: "uisfx:mechanical/snap", gain: -10 }]
+    reveal:     [{ src: "uisfx:mechanical/complete", gain: -8 }]
+    outro:      [{ src: "kenney-rpg:metalLatch", gain: -10 }]
+  rules: { maxPerSecond: 0.66, heroMax: 2, silentShare: 0.65 }

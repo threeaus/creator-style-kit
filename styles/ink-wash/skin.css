@@ -1,0 +1,17 @@
+/* ink-wash — brush title, generous empty paper, one cinnabar 
+/* chapter stays horizontal: model names are mostly Latin, which reads badly in vertical-rl. For pure-Chinese titles add style="writing-mode:vertical-rl" on .ttl. */
+.csk[data-csk="ink-wash"] .csk-chapter .num { color: var(--c-muted); font-size: 120px; }
+.csk[data-csk="ink-wash"] .csk-chapter .ttl { font-size: 150px; }
+.csk[data-csk="ink-wash"] .csk-chapter .rule { display: none; }
+.csk[data-csk="ink-wash"] .t-label { font-family: var(--f-body); text-transform: none; }
+.csk[data-csk="ink-wash"] .csk-head .ttl { font-size: 100px; letter-spacing: 0.02em; }
+.csk[data-csk="ink-wash"] .csk-list li { padding: 30px 0; }
+.csk[data-csk="ink-wash"] .csk-list li .idx { font-family: var(--f-display); font-weight: 400; font-size: 60px; color: var(--c-muted); }
+.csk[data-csk="ink-wash"] .csk-list li .txt { font-size: 74px; }
+.csk[data-csk="ink-wash"] .csk-list li .rule { height: 1px; opacity: 0.8; }
+.csk[data-csk="ink-wash"] .csk-stat .val { position: relative; z-index: 1; }
+.csk[data-csk="ink-wash"] .csk-stat .unit { font-size: 100px; position: relative; z-index: 1; }
+.csk[data-csk="ink-wash"] .csk-stat .note { font-size: 46px; }
+
+/* Latin in titles (model names) set in an upright serif; the brush face only takes the CJK glyphs */
+.csk[data-csk="ink-wash"] .t-display, .csk[data-csk="ink-wash"] .csk-list li .txt, .csk[data-csk="ink-wash"] .csk-stat .unit { font-family: "CSK Instrument Serif Upright", var(--f-display); }

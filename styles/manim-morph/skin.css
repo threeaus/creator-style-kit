@@ -1,0 +1,12 @@
+/* manim-morph — black stage, faint NumberPlane, colour carries meaning (blue = input, green = output, yellow = focus) */
+.csk[data-csk="manim-morph"] .mm-plane { background-image: linear-gradient(rgba(88,196,221,0.16) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(88,196,221,0.16) 1.5px, transparent 1.5px); background-size: 135px 135px; background-position: 0 -15px; }
+.csk[data-csk="manim-morph"] .mm-plane::before, .csk[data-csk="manim-morph"] .mm-plane::after { content: ""; position: absolute; background: rgba(255,255,255,0.32); }
+.csk[data-csk="manim-morph"] .mm-plane::before { left: 0; right: 0; top: 1335px; height: 2px; }
+.csk[data-csk="manim-morph"] .mm-plane::after { top: 0; bottom: 0; left: 540px; width: 2px; }
+.csk[data-csk="manim-morph"] .csk-chapter .num { color: var(--c-blue); font-size: 180px; }
+.csk[data-csk="manim-morph"] .csk-chapter .rule { height: 2px; background: var(--c-blue); }
+.csk[data-csk="manim-morph"] .csk-list li .idx { color: var(--c-blue); font-size: 54px; min-width: 50px; }
+.csk[data-csk="manim-morph"] .csk-list li .txt { font-size: 60px; }
+.csk[data-csk="manim-morph"] .csk-list li .rule { display: none; }
+.csk[data-csk="manim-morph"] .csk-stat .unit { color: var(--c-green); font-size: 80px; }
+.csk[data-csk="manim-morph"] .t-label { color: var(--c-blue); }

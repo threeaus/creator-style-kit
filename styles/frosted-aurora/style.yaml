@@ -1,0 +1,62 @@
+id: frosted-aurora
+order: 13
+name: { zh: 弥散玻璃, en: Frosted Aurora }
+essence: 暗底上缓慢流动的极光色团、半透明磨砂玻璃卡片、发丝亮边、渐变扫过关键词、整屏起雾换场。像 AI 产品发布会——高级、通透。
+not:
+  - 色团只用一个色相家族（靛蓝→紫→青），不要彩虹
+  - 光留在暗处：色团低饱和、大模糊，绝不直接打在文字上
+  - 玻璃描边 1px、透明度 ≤ 16%，不要厚边框和投影
+  - 必须加颗粒，否则压缩后会出色带
+references: [Linear / Raycast / Vercel 发布页, Apple visionOS 玻璃, lemo-opuscar/glass-product, MagicUI border-beam]
+best_for: [新模型发布开场, 功能亮点, 产品级展示, 片头片尾]
+
+fonts:
+  display: { family: "CSK Noto Sans SC Light", file: NotoSansSC-Light.otf, weight: 300, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Regular.otf, weight: 400, license: "OFL-1.1" }
+  latin:   { family: "CSK Space Grotesk", file: SpaceGrotesk-Medium.ttf, weight: 500, license: "OFL-1.1" }
+  mono:    { family: "JetBrains Mono", bundled: true, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#07070C"
+  surface: "rgba(255,255,255,0.07)"
+  line: "rgba(255,255,255,0.14)"
+  text: "#F5F5FA"
+  muted: "#A2A2B8"
+  accent: "#62DCFF"
+  accent2: "#A98BFF"
+  accentInk: "#07070C"
+  blobA: "#2A2580"
+  blobB: "#4C1D95"
+  blobC: "#0B4F63"
+
+type: { hero: 300, h1: 132, h2: 90, body: 40, label: 26, displayTracking: -0.01, labelTracking: 0.28 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power2.in", snap: "power3.inOut", overshoot: "none" }
+  dur: { in: 0.85, out: 0.35, charStagger: 0.03, lineStagger: 0.1 }
+  textIn: blur-rise
+  textOut: disperse
+  emphasis: gradient-sweep   # 青→紫渐变从关键词中扫过
+  number: soft-count         # 模糊淡入 + 计数
+  list: glass-cards          # 磨砂玻璃卡片升起，边缘一道高光掠过
+  transition: frost          # 整屏起雾再散开
+  camera: slow-push
+
+layout: { chapter: center, list: head-top, stat: center }   # archetypes in runtime/kit.css
+
+texture: { grain: 0.05 }
+
+lookbook:
+  idx: "0{n}"
+  textures: '<div class="tex tex-blobs"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div><div class="tex tex-grain"></div>'
+
+sound:
+  character: 玻璃质感的轻响和柔和的空气声；通透、昂贵、很少
+  kit:
+    title:      [{ src: "uisfx:glass/open", gain: -6 }]
+    list:       [{ src: "uisfx:glass/select", gain: -9, pitch: [0, 2, 4] }]
+    transition: [{ src: "synth:air-whoosh-short", gain: -11 }, { src: "uisfx:glass/swipe", gain: -9 }]
+    hit:        [{ src: "uisfx:glass/snap", gain: -8 }]
+    reveal:     [{ src: "uisfx:glass/complete", gain: -6 }]
+    outro:      [{ src: "uisfx:glass/success", gain: -7 }]
+  rules: { maxPerSecond: 0.6, heroMax: 2, silentShare: 0.7 }

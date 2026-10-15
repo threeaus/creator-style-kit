@@ -1,0 +1,61 @@
+id: manim-morph
+order: 9
+name: { zh: 数学动画, en: Manim Morph }
+essence: 纯黑底、CMU 衬线、Manim 的 Write 笔画书写与 Circumscribe 圈注、颜色带语义（蓝=输入、绿=输出、黄=焦点）。像 3Blue1Brown——讲直觉的科普。
+not:
+  - 不用硬切和快闪；节奏是「快、快、慢」
+  - 颜色必须有含义，不能为了好看换色
+  - 不用投影、发光、纹理；底就是纯黑
+  - 能变形就不要淡出淡入
+references: [3Blue1Brown, ManimCE color constants, manim smooth rate func]
+best_for: [原理科普, 注意力/嵌入等概念, 公式推导, 推理过程讲解]
+
+fonts:
+  display: { family: "CSK Noto Serif SC", file: NotoSerifSC-SemiBold.otf, weight: 600, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  body:    { family: "CSK Noto Serif SC", file: NotoSerifSC-Regular.otf, weight: 400, license: "OFL-1.1", source: "https://github.com/notofonts/noto-cjk" }
+  latin:   { family: "CSK CMU Serif Roman", file: CMUSerif-Roman.otf, weight: 400, license: "OFL-1.1", source: "https://mirrors.ctan.org/fonts/cm-unicode/" }
+  mono:    { family: "JetBrains Mono", bundled: true, weight: 500, license: "OFL-1.1" }
+  note:    { family: "CSK CMU Serif Italic", file: CMUSerif-Italic.otf, weight: 400, style: italic, license: "OFL-1.1", source: "https://mirrors.ctan.org/fonts/cm-unicode/" }
+
+colors:
+  bg: "#000000"
+  surface: "#000000"
+  line: "rgba(88,196,221,0.22)"
+  text: "#FFFFFF"
+  muted: "#8A8A8A"
+  accent: "#F7D96F"
+  accentInk: "#000000"
+  blue: "#58C4DD"
+  green: "#83C167"
+
+type: { hero: 300, h1: 124, h2: 86, body: 40, label: 26, displayTracking: 0, labelTracking: 0.06 }
+
+motion:
+  ease: { enter: "cubic(0.45,0,0.55,1)", exit: "cubic(0.45,0,0.55,1)", snap: "cubic(0.45,0,0.55,1)", overshoot: "none" }
+  dur: { in: 1.0, out: 0.5, charStagger: 0.05, lineStagger: 0.15 }
+  textIn: write              # 先描边书写，再灌满填充（Manim Write）
+  textOut: fade
+  emphasis: circumscribe     # 黄框圈住 → 变黄 → 框消失（Circumscribe + Indicate）
+  number: decimal-tracker    # DecimalNumber 平滑计数
+  list: grow-in              # 从项目符号处长出来（GrowFromPoint）
+  transition: dip
+  camera: locked
+
+layout: { chapter: center, list: center, stat: center }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, grain: 0 }
+
+lookbook:
+  idx: "•"
+  textures: '<div class="tex mm-plane"></div>'
+
+sound:
+  character: 柔和的钢片与正弦音，像在黑板前安静地讲；默认是安静
+  kit:
+    title:      [{ src: "uisfx:dreamy/open", gain: -9 }]
+    list:       [{ src: "uisfx:dreamy/progress-step", gain: -11, pitch: [0, 3, 5] }]
+    transition: [{ src: "uisfx:dreamy/swipe", gain: -12 }]
+    hit:        [{ src: "uisfx:dreamy/snap", gain: -10 }]
+    reveal:     [{ src: "uisfx:dreamy/complete", gain: -8 }]
+    outro:      [{ src: "uisfx:dreamy/success", gain: -9 }]
+  rules: { maxPerSecond: 0.5, heroMax: 1, silentShare: 0.75 }

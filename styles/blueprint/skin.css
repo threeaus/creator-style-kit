@@ -1,0 +1,13 @@
+/* blueprint — drawing sheet, title block, leader lines */
+.csk[data-csk="blueprint"] .bp-block { position: absolute; right: 60px; bottom: 170px; width: 330px; border: 2px solid var(--c-text); font-family: var(--f-mono); font-size: 18px; letter-spacing: 0.1em; }
+.csk[data-csk="blueprint"] .bp-block div { display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--c-line); }
+.csk[data-csk="blueprint"] .bp-block div:last-child { border-bottom: none; }
+.csk[data-csk="blueprint"] .bp-block span { color: var(--c-muted); }
+.csk[data-csk="blueprint"] .csk-chapter .num { color: var(--c-accent); font-size: 170px; }
+.csk[data-csk="blueprint"] .csk-chapter .rule { height: 1.5px; background: var(--c-accent); }
+.csk[data-csk="blueprint"] .csk-list li { align-items: center; padding: 30px 0; }
+.csk[data-csk="blueprint"] .csk-list li .idx { min-width: 26px; width: 26px; height: 26px; border: 3px solid var(--c-accent); border-radius: 50%; font-size: 0; }
+.csk[data-csk="blueprint"] .csk-list li .txt { font-size: 58px; }
+.csk[data-csk="blueprint"] .csk-list li .rule { height: 1.5px; background: var(--c-accent); opacity: 0.55; }
+.csk[data-csk="blueprint"] .csk-stat .unit { font-size: 76px; }
+.csk[data-csk="blueprint"] .csk-tr .sheet.edge-x { background-color: var(--c-bg); background-image: linear-gradient(var(--c-line) 1px, transparent 1px), linear-gradient(90deg, var(--c-line) 1px, transparent 1px); background-size: 120px 120px; }

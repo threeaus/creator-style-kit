@@ -1,0 +1,9 @@
+/* poster-kinetic */
+.csk[data-csk="poster-kinetic"] .csk-chapter .ttl { font-size: 150px; line-height: 0.95; }
+.csk[data-csk="poster-kinetic"] .csk-head .ttl { font-size: 118px; line-height: 1.05; }
+.csk[data-csk="poster-kinetic"] .csk-list { top: 1000px; }
+.csk[data-csk="poster-kinetic"] .csk-list li .txt { font-size: 70px; font-family: var(--f-display); }
+.csk[data-csk="poster-kinetic"] .csk-stat .val { font-size: 330px; }
+
+/* split chapter: keep the giant number clear of the top tape */
+.csk[data-csk="poster-kinetic"][data-l-chapter="split"] .csk-chapter { top: 340px; }

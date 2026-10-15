@@ -1,0 +1,5 @@
+/* warm-notebook */
+.csk[data-csk="warm-notebook"] .csk-list li { background: #fff; border: 3px solid var(--c-text); border-radius: 28px; padding: 22px 30px; margin-bottom: 22px; }
+.csk[data-csk="warm-notebook"] .csk-list li:nth-child(2) .idx { color: var(--c-sky); }
+.csk[data-csk="warm-notebook"] .csk-list li:nth-child(3) .idx { color: var(--c-mint); }
+.csk[data-csk="warm-notebook"] .csk-stat .val { display: inline-block; background: var(--c-butter); border-radius: 80px; padding: 20px 50px 34px; }

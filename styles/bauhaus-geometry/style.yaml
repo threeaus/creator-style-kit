@@ -1,0 +1,60 @@
+id: bauhaus-geometry
+order: 15
+name: { zh: 包豪斯构成, en: Bauhaus Geometry }
+essence: 米白底、红黄蓝三原色加黑、圆方三角做编号、色块擦过露出文字、圆形光圈换场。理性又有设计感——把抽象概念拆成几何积木。
+not:
+  - 只用三原色 + 黑，不加第五种颜色
+  - 每个节拍只动一个元素；动作快起快停，不回弹
+  - 不用渐变、阴影、纹理以外的装饰
+  - 构造线可以留着，但不超过两条
+references: [Bauhaus 1919–1933, Herbert Bayer, Josef Albers, chenyuxiaojin bauhaus prompt]
+best_for: [概念拆解, 分类/框架, 三要素类结构, 系列栏目片头]
+
+fonts:
+  display: { family: "CSK Noto Sans SC", file: NotoSansSC-Black.otf, weight: 900, license: "OFL-1.1" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Bold.otf, weight: 700, license: "OFL-1.1" }
+  latin:   { family: "CSK Archivo", file: Archivo-Black900.ttf, weight: 900, license: "OFL-1.1" }
+  mono:    { family: "CSK Space Mono", file: SpaceMono-Bold.ttf, weight: 700, license: "OFL-1.1" }
+
+colors:
+  bg: "#F0EBE0"
+  surface: "#141414"
+  line: "rgba(20,20,20,0.14)"
+  text: "#141414"
+  muted: "#6A645A"
+  accent: "#E1362C"
+  accentInk: "#F0EBE0"
+  blue: "#1F4BB7"
+  yellow: "#F2C230"
+
+type: { hero: 320, h1: 136, h2: 92, body: 40, label: 26, displayTracking: -0.02, labelTracking: 0.12 }
+
+motion:
+  ease: { enter: "power3.out", exit: "expo.in", snap: "cubic(0.8,0,0.2,1)", overshoot: "none" }
+  dur: { in: 0.6, out: 0.28, charStagger: 0, lineStagger: 0.1 }
+  textIn: slide-block        # 色块擦过，文字在色块之后出现
+  textOut: cut
+  emphasis: shape-mark       # 一个原色圆落在关键词后面
+  number: geo-count          # 大红圆先落下，数字切入其上
+  list: geo-blocks           # 圆/方/三角编号旋转入场 + 色块擦出文字
+  transition: shape-iris     # 红色圆形光圈张开盖满，再收向角落
+  camera: locked
+
+layout: { chapter: split, list: head-top, stat: left }   # archetypes in runtime/kit.css
+
+texture: { grid: 0, grain: 0.03 }
+
+lookbook:
+  idx: ""
+  textures: '<div class="tex tex-grain"></div><div class="bh-deco"><i class="sq"></i><i class="tri"></i><i class="ln"></i></div>'
+
+sound:
+  character: 木块、木琴与干脆的敲击；有节奏、有形状感
+  kit:
+    title:      [{ src: "kenney-imp:impactWood_medium_001", gain: -8 }]
+    list:       [{ src: "kenney-if:pluck_001", gain: -10, pitch: [0, 3, 7] }]
+    transition: [{ src: "uisfx:studio/swipe", gain: -9 }]
+    hit:        [{ src: "kenney-imp:impactWood_light_003", gain: -8 }]
+    reveal:     [{ src: "uisfx:studio/complete", gain: -7 }]
+    outro:      [{ src: "uisfx:studio/success", gain: -8 }]
+  rules: { maxPerSecond: 0.75, heroMax: 2, silentShare: 0.55 }

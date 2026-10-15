@@ -1,0 +1,7 @@
+/* dev-console */
+.csk[data-csk="dev-console"] .csk-list li .idx { color: var(--c-accent); }
+.csk[data-csk="dev-console"] .csk-head .ttl, .csk[data-csk="dev-console"] .csk-chapter .ttl { font-family: var(--f-display); }
+.csk[data-csk="dev-console"] .csk-stat .val { font-family: var(--f-mono); }
+.csk[data-csk="dev-console"] .win { position:absolute; left:60px; right:60px; top:360px; bottom:420px; border:1px solid var(--c-line); border-radius:18px; background: var(--c-surface); }
+.csk[data-csk="dev-console"] .win .bar { height:58px; border-bottom:1px solid var(--c-line); display:flex; gap:12px; align-items:center; padding:0 24px; }
+.csk[data-csk="dev-console"] .win .bar i { width:14px; height:14px; border-radius:50%; background:#30363D; display:block; }

@@ -1,0 +1,61 @@
+id: ink-wash
+order: 16
+name: { zh: 水墨留白, en: Ink Wash }
+essence: 宣纸色、五阶墨色、毛笔标题、字从纸里洇出来、朱砂印章点睛、墨滴晕开换场、六七成留白。东方、安静、有余韵。
+not:
+  - 只有一种红（朱砂），只用在印章和一个关键词上
+  - 画面 60% 以上留白，不要填满
+  - 不用硬切、快闪和电子合成音
+  - 毛笔字体只用于标题，正文用楷体保证易读
+references: [lemo-opuscar/ink-wash, 中国传统色（缟/漆黑/墨灰/胭脂）, 宋画留白]
+best_for: [人文/历史类科普, AI 与传统文化, 年度回顾/金句, 节日特辑]
+
+fonts:
+  display: { family: "CSK Ma Shan Zheng", file: MaShanZheng-Regular.ttf, weight: 400, license: "OFL-1.1", source: "https://github.com/google/fonts/tree/main/ofl/mashanzheng" }
+  body:    { family: "CSK WenKai", file: LXGWWenKai-Medium.ttf, weight: 500, license: "OFL-1.1", source: "https://github.com/lxgw/LxgwWenKai" }
+  latin:   { family: "CSK Instrument Serif", file: InstrumentSerif-Italic.ttf, weight: 400, style: italic, license: "OFL-1.1" }
+  displayLatin: { family: "CSK Instrument Serif Upright", file: InstrumentSerif-Regular.ttf, weight: 400, license: "OFL-1.1", source: "Google Fonts" }
+  mono:    { family: "CSK WenKai", file: LXGWWenKai-Medium.ttf, weight: 500, license: "OFL-1.1" }
+
+colors:
+  bg: "#F2ECDE"
+  surface: "#EDE5D3"
+  line: "rgba(22,24,35,0.14)"
+  text: "#161823"
+  muted: "#758A99"
+  accent: "#9D2933"
+  accentInk: "#F2ECDE"
+  seal: "#B7352B"
+
+type: { hero: 320, h1: 168, h2: 108, body: 42, label: 26, displayTracking: 0.04, labelTracking: 0.3 }
+
+motion:
+  ease: { enter: "power2.out", exit: "power1.in", snap: "power2.inOut", overshoot: "none" }
+  dur: { in: 0.9, out: 0.45, charStagger: 0.04, lineStagger: 0.15 }
+  textIn: ink-bleed          # 字从纸中洇出：模糊 → 清晰，慢
+  textOut: disperse
+  emphasis: seal-stamp       # 关键词变胭脂色，旁边盖一枚朱砂小印
+  number: ink-count          # 一笔干墨扫过，数字洇出
+  list: ink-rows
+  transition: ink-spread     # 墨滴晕开盖满，再化为新纸
+  camera: drift              # 极慢的漂移
+
+layout: { chapter: right-mid, list: low, stat: low-left }   # archetypes in runtime/kit.css
+
+texture: { grain: 0.04 }
+
+lookbook:
+  idx: "{cn}"
+  textures: '<div class="tex tex-rice"></div><div class="tex tex-wash"></div><div class="tex tex-grain"></div>'
+
+sound:
+  character: 木鱼、竹、纸、低沉的空气声；稀疏，留出呼吸
+  kit:
+    title:      [{ src: "uisfx:zen/open", gain: -7 }]
+    list:       [{ src: "uisfx:zen/select", gain: -10, pitch: [0, 2, 5] }]
+    transition: [{ src: "uisfx:zen/swipe", gain: -8 }]
+    hit:        [{ src: "kenney-imp:impactWood_light_002", gain: -9 }]
+    highlight:  [{ src: "kenney-rpg:cloth2", gain: -10 }]
+    reveal:     [{ src: "uisfx:zen/complete", gain: -7 }]
+    outro:      [{ src: "uisfx:zen/success", gain: -8 }]
+  rules: { maxPerSecond: 0.45, heroMax: 1, silentShare: 0.8 }

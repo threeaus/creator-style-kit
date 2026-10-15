@@ -1,0 +1,59 @@
+id: poster-kinetic
+name: { zh: 海报撞色, en: Poster Kinetic }
+essence: 每一刀都换底色，超大裁切字压满画面，字母从天而降，斜向胶带滚动。冲击力强、节奏感强——适合开头 3 秒的钩子。
+not:
+  - 不要连续三次用同一种转场
+  - 不用噪声呼呼声，一半的切换保持安静
+  - 不要整支视频都用这个风格（疲劳），用于钩子/章节
+  - 不用阴影和渐变，只用纯色块
+references: [瑞士/当代海报, kinetic-reel (opus-video-skills), 半佛仙人/差评 的冲击力]
+best_for: [前 3 秒钩子, 章节标题, 金句, 数字冲击]
+
+fonts:
+  display: { family: "CSK YouShe", file: YouSheBiaoTiHei.ttf, weight: 400, license: "优设标题黑（免费商用）", source: "https://www.uisdc.com/" }
+  body:    { family: "CSK Noto Sans SC", file: NotoSansSC-Black.otf, weight: 900, license: "OFL-1.1" }
+  latin:   { family: "CSK Archivo", file: Archivo-Black900.ttf, weight: 900, license: "OFL-1.1" }
+  mono:    { family: "CSK Plex Mono", file: IBMPlexMono-Bold.ttf, weight: 700, license: "OFL-1.1" }
+
+colors:
+  bg: "#111111"
+  surface: "#1C1C1C"
+  line: "rgba(255,255,255,0.12)"
+  text: "#F3EEE4"
+  muted: "#9A958C"
+  accent: "#D7FF3A"
+  accentInk: "#111111"
+  grounds: ["#111111", "#D7FF3A", "#F3EEE4", "#2B50FF"]
+  groundText: ["#F3EEE4", "#111111", "#111111", "#F3EEE4"]
+  groundAccent: ["#D7FF3A", "#2B50FF", "#2B50FF", "#D7FF3A"]   # accent per ground, so emphasis never matches its background
+
+type: { hero: 420, h1: 190, h2: 120, body: 44, label: 26, displayTracking: -0.02, labelTracking: 0.2 }
+
+motion:
+  ease: { enter: "expo.out", exit: "expo.in", snap: "expo.inOut", overshoot: "none" }
+  dur: { in: 0.6, out: 0.3, charStagger: 0.045, lineStagger: 0.1 }
+  textIn: drop-letters       # 字母从上方落下，描边回声叠在上下
+  emphasis: recolor-char     # 一个关键字换成强调色
+  number: odometer           # 巨型数字滚动
+  list: slam-alternate       # 词语左右交替撞入
+  transition: ground-slats   # 新底色以竖条切入，同时换底色
+  camera: punch              # 关键处 4 帧放大 12%
+
+layout: { chapter: split, list: head-top, stat: low-left }   # archetypes in runtime/kit.css
+
+texture: { tape: "✳ OPUS 5.5 ✳ 实战拆解 ✳ PROMPT ✳ ", tapeAngle: -8 }
+
+order: 5
+lookbook:
+  textures: '<div class="tape" style="top:190px;transform:rotate(-7deg)"><span class="run">{tape}{tape}{tape}</span></div><div class="tape" style="top:1720px;transform:rotate(5deg)"><span class="run">{tape}{tape}{tape}</span></div>'
+
+sound:
+  character: 有重量的打击，配合节拍；没有呼呼声，约一半切换无声
+  kit:
+    title:      [{ src: "kenney-imp:impactPunch_heavy_001", gain: -8 }, { src: "synth:subboom", gain: -14 }]
+    list:       [{ src: "kenney-imp:impactPunch_medium_000", gain: -12 }, { src: "kenney-imp:impactPunch_medium_002", gain: -12 }, { src: "kenney-imp:impactPunch_medium_004", gain: -12 }]
+    transition: [{ src: "uisfx:studio/swipe", gain: -8 }]
+    hit:        [{ src: "kenney-imp:impactPlate_heavy_001", gain: -12 }]
+    reveal:     [{ src: "uisfx:cinematic/complete", gain: -6 }]
+    outro:      [{ src: "uisfx:studio/success", gain: -8 }]
+  rules: { maxPerSecond: 0.8, heroMax: 4, silentShare: 0.55 }
